@@ -13,32 +13,65 @@
                 </van-col>
             </van-row>
         </div>
+
         <!-- slider -->
         <div class="swiper-area">
-            <van-swipe class="my-swipe" :autoplay="1000">
-                <van-swipe-item v-for="(item,index) in bannerPicArray" :key="index">
-                    <img v-lazy="item.imageUrl" alt="" width="100%">
+            <van-swipe :autoplay="1000">
+                <van-swipe-item v-for="(banner,index) in bannerPicArray" :key="index">
+                    <img v-lazy="banner.image" width="100%"/>
                 </van-swipe-item>
             </van-swipe>
+        </div>
+
+        <!-- types -->
+        <div class="type-bar">
+            <div  v-for="(item,index) in category" :key="index" >
+                    <img v-lazy="item.image" width="90%" />
+                    <span>{{item.mallCategoryName}}</span> 
+            </div>
+        </div>
+
+        <!--AD banner area-->
+        <div class="ad-banner">
+            <img v-lazy="adBanner.PICTURE_ADDRESS" width="100%">
         </div>
     </div>
 </template>
 
 <script>
+    import axios from "axios"
     export default {
         data() {
             return {
                 msg: 'haha',
                 locationIcon:require("../../assets/images/location.png"),
-                bannerPicArray:[
-                  {imageUrl:'https://images.pexels.com/photos/6069562/pexels-photo-6069562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
-                  {imageUrl:'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
-                  {imageUrl:'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
-                ]
+                bannerPicArray:[],
+                category:[],
+                adBanner:{}
+
             }
         },
+        created(){
+            axios({
+                url:"https://mocki.io/v1/56645569-6ae1-4faa-a9cc-25a88f18dd82",
+                method:"GET",
+
+            }).then(res=>{
+                console.log(res)
+                if(res.status==200){
+                    this.category = res.data.data.category;
+                    this.adBanner = res.data.data.advertesPicture
+                    this.bannerPicArray = res.data.data.slides
+                }
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+
     }
 </script>
+
+
 
 <style scoped>
   .search-bar{
@@ -66,5 +99,19 @@
       width:20rem;
       max-height: 15rem;
       overflow: hidden;
+  }
+   .type-bar{
+      background-color: #fff;
+      margin:0 .3rem .3rem .3rem;
+      border-radius: .3rem;
+      font-size:14px;
+      display: flex;
+      flex-direction:row;
+      flex-wrap:nowrap;
+  }
+  .type-bar div{
+      padding: .3rem;
+      font-size: 12px;
+      text-align: center;
   }
 </style>
