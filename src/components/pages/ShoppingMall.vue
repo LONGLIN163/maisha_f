@@ -35,21 +35,77 @@
         <div class="ad-banner">
             <img v-lazy="adBanner.PICTURE_ADDRESS" width="100%">
         </div>
+
+        <!-- recommend -->
+        <div class="recommend-area">
+            <div class="recommend-title">
+                Recommendation
+            </div>
+            <div class="recommend-body">
+
+            </div>
+        </div>
+        <!--swiper-->
+        <swiper :options="swiperOption">
+            <swiper-slide v-for=" (item ,index) in recommendGoods" :key="index">
+                <div class="recommend-item">
+
+                        <img :src="item.image" width="80%" />
+                        <div>{{item.goodsName}}</div>
+                        <div>${{item.price}} (${{item.mallPrice}})</div>
+
+                </div>
+            </swiper-slide>
+        </swiper>
+        
+        <!--floor one area-->
+        <div class="floor">
+
+            <div class="floor-anomaly">
+                <div class="floor-one"><img :src="floor1_0.image" width="100%" /></div>
+                <div>
+                    <div class="floor-two"><img :src="floor1_1.image" width="100%" /></div>
+                    <div><img :src="floor1_2.image" width="100%" /></div>
+                </div>
+            </div>
+
+            <div class="floor-rule">
+                <div v-for="(item ,index) in floor1.slice(3)" :key="index">
+                    <img :src="item.image" width="100%"/>
+                </div>
+            </div>
+ 
+        </div>
     </div>
 </template>
 
 <script>
-    import axios from "axios"
+    import axios from "axios" 
+
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
+        
     export default {
         data() {
             return {
+                swiperOption:{
+                    slidesPerView: 3
+                },
                 msg: 'haha',
                 locationIcon:require("../../assets/images/location.png"),
                 bannerPicArray:[],
                 category:[],
-                adBanner:{}
-
+                adBanner:{},
+                recommendGoods:[],
+                floor1:[],
+                floor1_0:{},
+                floor1_1:{},
+                floor1_2:{}
             }
+        },
+        components:{
+            swiper,
+            swiperSlide
         },
         created(){
             axios({
@@ -62,6 +118,11 @@
                     this.category = res.data.data.category;
                     this.adBanner = res.data.data.advertesPicture
                     this.bannerPicArray = res.data.data.slides
+                    this.recommendGoods = res.data.data.recommend
+                    this.floor1 = res.data.data.floor1        
+                    this.floor1_0 =this.floor1[0]
+                    this.floor1_1 =this.floor1[1]
+                    this.floor1_2 =this.floor1[2]
                 }
             }).catch(err=>{
                 console.log(err)
@@ -114,4 +175,61 @@
       font-size: 12px;
       text-align: center;
   }
+  .recommend-area{
+      background-color: #fff;
+      margin-top: .3rem;
+  }
+  .recommend-title{
+      border-bottom: 1px solid #eee;
+      font-size:14px;
+      padding: .2rem;
+      color: #e5017d;
+  }
+  .recommend-body{
+       border-bottom: 1px solid #eee;
+   }
+  .recommend-item{
+      width:99%;
+      border-right: 1px solid #eee;
+      font-size: 12px;
+      text-align: center;
+  }
+
+   .floor-anomaly{
+      display: flex;
+      flex-direction:row;
+      background-color: #fff;
+      border-bottom:1px solid #ddd;
+  }
+  .floor-anomaly div{
+     width:10rem;
+ 
+     box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+  }
+  .floor-one{
+      border-right:1px solid #ddd;
+
+  }
+  .floor-two{
+      border-bottom:1px solid #ddd;
+  }
+
+    .floor-rule{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      background-color: #fff;
+
+  }
+  .floor-rule div{
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width:10rem;
+      border-bottom:1px solid #ddd;
+  }
+  .floor-rule div:nth-child(odd){
+      border-right: 1px solid #ddd;
+  }
+
 </style>
