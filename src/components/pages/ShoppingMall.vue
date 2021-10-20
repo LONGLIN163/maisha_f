@@ -63,6 +63,24 @@
         <FloorCompo :floorData='floor2' :floorTitle='floorName.floor2'></FloorCompo>
         <FloorCompo :floorData='floor3' :floorTitle='floorName.floor3'></FloorCompo>
 
+        <!--Hot Area-->
+        <div class="hot-area">
+            <div class="hot-title">HOT</div>
+            <div class="hot-goods">
+                <van-list>
+                        <van-row gutter="20">
+                            <van-col span="12" v-for="( item, index) in hotGoods" :key="index">
+                                <GoodsInfoCompo 
+                                 :goodsImage='item.image' 
+                                 :goodsName='item.name' 
+                                 :goodsPrice='item.mallPrice' 
+                                ></GoodsInfoCompo>
+                            </van-col>
+                        </van-row>
+                    </van-list>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -72,6 +90,7 @@
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
     import FloorCompo from '@/components/compos/FloorCompo'
+    import GoodsInfoCompo from '@/components/compos/GoodsInfoCompo'
     import {toMoney} from '@/filters/moneyFilter.js'
         
     export default {
@@ -89,13 +108,15 @@
                 floor1:[],
                 floor2:[],
                 floor3:[],
-                floorName:{}
+                floorName:{},
+                hotGoods:[]
             }
         },
         components:{
             swiper,
             swiperSlide,
-            FloorCompo
+            FloorCompo,
+            GoodsInfoCompo
         },
         created(){
             axios({
@@ -112,7 +133,8 @@
                     this.floor1 = res.data.data.floor1        
                     this.floor2 = res.data.data.floor2        
                     this.floor3 = res.data.data.floor3        
-                    this.floorName = res.data.data.floorName        
+                    this.floorName = res.data.data.floorName  
+                    this.hotGoods = res.data.data.hotGoods      
                 }
             }).catch(err=>{
                 console.log(err)
@@ -188,6 +210,13 @@
       border-right: 1px solid #eee;
       font-size: 12px;
       text-align: center;
+  }
+
+  .hot-area{
+      text-align: center;
+      font-size:14px;
+      height: 1.8rem;
+      line-height:1.8rem;
   }
 
 </style>
