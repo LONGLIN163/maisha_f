@@ -43,39 +43,26 @@
             </div>
             <div class="recommend-body">
 
+                <!--swiper-->
+                <swiper :options="swiperOption">
+                    <swiper-slide v-for=" (item ,index) in recommendGoods" :key="index">
+                        <div class="recommend-item">
+
+                                <img :src="item.image" width="80%" />
+                                <div>{{item.goodsName}}</div>
+                                <div>${{item.price}} (${{item.mallPrice}})</div>
+
+                        </div>
+                    </swiper-slide>
+                </swiper>
+                
             </div>
         </div>
-        <!--swiper-->
-        <swiper :options="swiperOption">
-            <swiper-slide v-for=" (item ,index) in recommendGoods" :key="index">
-                <div class="recommend-item">
-
-                        <img :src="item.image" width="80%" />
-                        <div>{{item.goodsName}}</div>
-                        <div>${{item.price}} (${{item.mallPrice}})</div>
-
-                </div>
-            </swiper-slide>
-        </swiper>
-        
         <!--floor one area-->
-        <div class="floor">
+        <FloorCompo :floorData='floor1' :floorTitle='floorName.floor1'></FloorCompo>
+        <FloorCompo :floorData='floor2' :floorTitle='floorName.floor2'></FloorCompo>
+        <FloorCompo :floorData='floor3' :floorTitle='floorName.floor3'></FloorCompo>
 
-            <div class="floor-anomaly">
-                <div class="floor-one"><img :src="floor1_0.image" width="100%" /></div>
-                <div>
-                    <div class="floor-two"><img :src="floor1_1.image" width="100%" /></div>
-                    <div><img :src="floor1_2.image" width="100%" /></div>
-                </div>
-            </div>
-
-            <div class="floor-rule">
-                <div v-for="(item ,index) in floor1.slice(3)" :key="index">
-                    <img :src="item.image" width="100%"/>
-                </div>
-            </div>
- 
-        </div>
     </div>
 </template>
 
@@ -84,6 +71,7 @@
 
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import FloorCompo from '@/components/compos/FloorCompo'
         
     export default {
         data() {
@@ -98,14 +86,15 @@
                 adBanner:{},
                 recommendGoods:[],
                 floor1:[],
-                floor1_0:{},
-                floor1_1:{},
-                floor1_2:{}
+                floor2:[],
+                floor3:[],
+                floorName:{}
             }
         },
         components:{
             swiper,
-            swiperSlide
+            swiperSlide,
+            FloorCompo
         },
         created(){
             axios({
@@ -120,9 +109,9 @@
                     this.bannerPicArray = res.data.data.slides
                     this.recommendGoods = res.data.data.recommend
                     this.floor1 = res.data.data.floor1        
-                    this.floor1_0 =this.floor1[0]
-                    this.floor1_1 =this.floor1[1]
-                    this.floor1_2 =this.floor1[2]
+                    this.floor2 = res.data.data.floor2        
+                    this.floor3 = res.data.data.floor3        
+                    this.floorName = res.data.data.floorName        
                 }
             }).catch(err=>{
                 console.log(err)
@@ -193,43 +182,6 @@
       border-right: 1px solid #eee;
       font-size: 12px;
       text-align: center;
-  }
-
-   .floor-anomaly{
-      display: flex;
-      flex-direction:row;
-      background-color: #fff;
-      border-bottom:1px solid #ddd;
-  }
-  .floor-anomaly div{
-     width:10rem;
- 
-     box-sizing: border-box;
-     -webkit-box-sizing: border-box;
-  }
-  .floor-one{
-      border-right:1px solid #ddd;
-
-  }
-  .floor-two{
-      border-bottom:1px solid #ddd;
-  }
-
-    .floor-rule{
-      display: flex;
-      flex-direction: row;
-      flex-wrap:wrap;
-      background-color: #fff;
-
-  }
-  .floor-rule div{
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width:10rem;
-      border-bottom:1px solid #ddd;
-  }
-  .floor-rule div:nth-child(odd){
-      border-right: 1px solid #ddd;
   }
 
 </style>
