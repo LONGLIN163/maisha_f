@@ -13,6 +13,7 @@
             label="User Name"
             icon="clear"
             placeholder="Please input user name"
+            :error-message="usernameErrorMsg"
             required
             @click-icon="username = ''"
         />
@@ -22,10 +23,17 @@
             type="password"
             label="Password"
             placeholder="Please input password"
+            :error-message="passwordErrorMsg"
             required
         />
         <div class="register-button">
-            <van-button type="primary" @click="register" size="large">Register Now</van-button>
+            <van-button 
+            type="primary" 
+            @click="registerAction" 
+            size="large" 
+            :loading="openLoading" 
+            loading-text="loading"
+            >Register Now</van-button>
         </div>
        </div>
 
@@ -35,33 +43,67 @@
 <script>
     import axios from 'axios'
     import serviceApi from '@/serviceApi.config.js'
+    import {Toast} from 'vant'
 
     export default {
         data() {
             return {
                 username: '',
                 password: '',
+                openLoading:false, // controller register loading status
+                loadingText:'',
+                usernameErrorMsg:'', // name validation
+                passwordErrorMsg:'',  // password validation
             }
         },
         methods: {
             goBack() {
                 this.$router.go(-1)   
             },
+            checkForm(){
+                let isOk= true
+                if(this.username.length<5){
+                    this.usernameErrorMsg="username can not be less than 5 digit"
+                    isOk= false
+                }else{
+                    this.usernameErrorMsg=''
+                }
+                if(this.password.length<6){
+                    this.passwordErrorMsg="username can not be less than 6 digit"
+                    isOk= false
+                }else{
+                    this.passwordErrorMsg=''
+                }
+                return isOk
+            },
+            registerAction(){
+               this.checkForm() && this.register() // only register when no problem
+            },
             register(){
-                alert('register')
+                this.openLoading=true // start loading, prevent resubmit 2
                 axios({
                     url:serviceApi.userRegister,
                     method:'POST',
                     data:{
-                       username:this.username,
-                       password:this.password
+                       userName:this.username,
+                       password:this.password,
                     }
                 })
-                .then(response => {
-                    console.log(response)
+                .then(res => {
+                    console.log(res)
+                    if(res.data.code==200){
+                        Toast.success('register success!')
+                        this.$router.push('/') // prevent resubmit 1
+                    }else{
+                        console.log(res.data.message)
+                        this.openLoading=false // stop loading
+                        Toast.fail('register failed!')
+                    }
                 })
                 .catch((error) => {
                     console.log(error)
+                    Toast.fail('register failed,error!')
+                    this.openLoading=false  // stop loading 
                 })
             }
         },
