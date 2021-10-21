@@ -25,7 +25,7 @@
             required
         />
         <div class="register-button">
-            <van-button type="primary" size="large">Register Now</van-button>
+            <van-button type="primary" @click="register" size="large">Register Now</van-button>
         </div>
        </div>
 
@@ -33,6 +33,9 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import serviceApi from '@/serviceApi.config.js'
+
     export default {
         data() {
             return {
@@ -43,6 +46,23 @@
         methods: {
             goBack() {
                 this.$router.go(-1)   
+            },
+            register(){
+                alert('register')
+                axios({
+                    url:serviceApi.userRegister,
+                    method:'POST',
+                    data:{
+                       username:this.username,
+                       password:this.password
+                    }
+                })
+                .then(response => {
+                    console.log(response)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
             }
         },
     }
