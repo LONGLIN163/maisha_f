@@ -92,6 +92,7 @@
     import FloorCompo from '@/components/compos/FloorCompo'
     import GoodsInfoCompo from '@/components/compos/GoodsInfoCompo'
     import {toMoney} from '@/filters/moneyFilter.js'
+    import serviceApi from '@/serviceApi.config.js'
         
     export default {
         data() {
@@ -120,7 +121,7 @@
         },
         created(){
             axios({
-                url:"https://mocki.io/v1/56645569-6ae1-4faa-a9cc-25a88f18dd82",
+                url:serviceApi.getShoppingMallInfo,
                 method:"GET",
 
             }).then(res=>{
