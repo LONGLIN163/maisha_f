@@ -4,6 +4,8 @@ const serviceApi = {
     getShoppingMallInfo:BASEURL+'',
     getGoodsInfo:BASEURL+'getGoodsInfo',
     userRegister:LOCALURL+'user/register',
+    userLogin:LOCALURL+'user/login',
+    getDetailGoodsInfo:LOCALURL+'goods/getDetailGoodsInfo',
 }
 
 module.exports = serviceApi

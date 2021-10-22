@@ -1,7 +1,7 @@
 <template>
     <div>
        <van-nav-bar
-        title="Sign Up"
+        title="Login"
         left-text="back"
         left-arrow
         @click-left="goBack"
@@ -29,11 +29,11 @@
         <div class="register-button">
             <van-button 
             type="primary" 
-            @click="registerAction" 
+            @click="loginAction" 
             size="large" 
             :loading="openLoading" 
             loading-text="loading"
-            >Register Now</van-button>
+            >Login</van-button>
         </div>
        </div>
 
@@ -56,6 +56,12 @@
                 passwordErrorMsg:'',  // password validation
             }
         },
+        created(){
+            if(localStorage.userInfo){
+                    Toast.success('You r logged in!')
+                    this.$router.push('/')
+            }
+        },
         methods: {
             goBack() {
                 this.$router.go(-1)   
@@ -76,13 +82,13 @@
                 }
                 return isOk
             },
-            registerAction(){
-               this.checkForm() && this.register() // only register when no problem
+            loginAction(){
+               this.checkForm() && this.login() // only register when no problem
             },
-            register(){
+            login(){
                 this.openLoading=true // start loading, prevent resubmit 2
                 axios({
-                    url:serviceApi.userRegister,
+                    url:serviceApi.userLogin,
                     method:'POST',
                     data:{
                        userName:this.username,
@@ -90,18 +96,28 @@
                     }
                 })
                 .then(res => {
-                    if(res.data.code==200){
-                        Toast.success('register success!')
-                        this.$router.push('/') // prevent resubmit 1
+                    if(res.data.code==200 && res.data.message){
+                        // we need a promise to wait the login info get stored, then do the other thing
+                        new Promise((resolve,reject)=>{
+                        // use localStorage to store loged in info
+                        localStorage.userInfo={userName:this.username}
+                        setTimeout(()=>{resolve()},500) 
+                        }).then(()=>{ // if saved success,then do the other things
+                            Toast.success('Login success!')
+                            this.$router.push('/') // prevent resubmit 1
+                        }).catch(err=>{
+                            Toast.fail('Login status saved failed')
+                            console.log(err)
+                        })
                     }else{
                         console.log(res.data.message)
                         this.openLoading=false // stop loading
-                        Toast.fail('register failed!')
+                        Toast.fail('Login failed!')
                     }
                 })
                 .catch((error) => {
                     console.log(error)
-                    Toast.fail('register failed,error!')
+                    Toast.fail('Login failed,error!')
                     this.openLoading=false  // stop loading 
                 })
             }
