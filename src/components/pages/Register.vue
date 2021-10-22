@@ -105,7 +105,7 @@
                     this.openLoading=false  // stop loading 
                 })
             }
-        },
+        }
     }
 </script>
 

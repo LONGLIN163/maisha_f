@@ -73,7 +73,8 @@
                                 <GoodsInfoCompo 
                                  :goodsImage='item.image' 
                                  :goodsName='item.name' 
-                                 :goodsPrice='item.mallPrice' 
+                                 :goodsPrice='item.mallPrice'
+                                 :goodsId='item.goodsId' 
                                 ></GoodsInfoCompo>
                             </van-col>
                         </van-row>

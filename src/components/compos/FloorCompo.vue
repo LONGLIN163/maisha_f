@@ -37,7 +37,7 @@
         },
         watch:{ 
             floorData:function(val) { //monitor asyn data
-                console.log(this.floorData)
+                //console.log(this.floorData)
                 this.floorData0=this.floorData[0]
                 this.floorData1=this.floorData[1]
                 this.floorData2=this.floorData[2]
