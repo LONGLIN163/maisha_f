@@ -8,14 +8,10 @@ import router from './router'
 // import 'vant/lib/index.css'
 // Vue.use(Vant)
 
-import {Button,Row,Col,Swipe, SwipeItem, Lazyload, List, Field, NavBar , Tab,Tabs} from 'vant'
-Vue.use(Field).use(NavBar).use(Button).use(Row)
-.use(Col).use(Swipe).use(SwipeItem).use(Lazyload)
-.use(List).use(Tab).use(Tabs)
-
+import {PullRefresh,Button,Row,Col,Swipe, SwipeItem, Lazyload, List, Field, NavBar , Tab,Tabs} from 'vant'
+Vue.use(Field).use(NavBar).use(Button).use(Row).use(Col).use(Swipe).use(SwipeItem).use(Lazyload).use(List).use(Tab).use(Tabs).use(PullRefresh)
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
