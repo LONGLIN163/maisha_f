@@ -16,7 +16,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/main',name: 'Main',component: Main,
+    {path: '/',name: 'Main',component: Main,
       children:[
         { path: '/',name: 'ShoppingMall',component: ShoppingMall },
         { path: '/cart',name: 'Cart',component: Cart},
