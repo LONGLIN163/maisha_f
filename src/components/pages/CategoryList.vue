@@ -40,11 +40,11 @@
                                 :finished="finished"
                                 @load="onLoad"
                             >
-                                <div class="list-item" v-for="(item,index) in goodList" :key="index">
+                                <div class="list-item" @click="goGoods(item.ID)" v-for="(item,index) in goodList" :key="index">
                                     <div class="list-item-img"><img :src="item.IMAGE1" width="100%" :onerror="errorImg"/></div>
                                     <div class="list-item-text">
                                         <div>{{item.NAME}}</div>
-                                        <div class="">{{item.ORI_PRICE}}</div>
+                                        <div class="">{{item.ORI_PRICE | moneyFilter}}</div>
                                     </div>
                                 </div>
                             </van-list>
@@ -60,6 +60,8 @@
 <script>
     import axios from "axios" 
     import serviceApi from '@/serviceApi.config.js'
+    import {toMoney} from '@/filters/moneyFilter.js'
+
     export default {
         data() {
             return {
@@ -194,8 +196,17 @@
                     this.page=1;
                     this.onLoad();
                 }, 500);
+            },
+            goGoods(id){
+                //this.$router.push({path:'/Goods',query:{goodsId:id}})
+                this.$router.push({name:'Goods',params:{goodsId:id}})
             }
-        }
+        },
+        filters:{
+            moneyFilter(money){
+                return toMoney(money)
+            }  
+        },
     }
 </script>
 
