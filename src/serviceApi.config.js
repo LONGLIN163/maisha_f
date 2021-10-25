@@ -8,6 +8,7 @@ const serviceApi = {
     getDetailGoodsInfo:LOCALURL+'goods/getDetailGoodsInfo',
     getCategoryList:LOCALURL+'goods/getCategoryList',
     getSubCategoryList:LOCALURL+'goods/getSubCategoryList',
+    getGoodsListByCategorySubID:LOCALURL+'goods/getGoodsListByCategorySubID'
 }
 
 module.exports = serviceApi
