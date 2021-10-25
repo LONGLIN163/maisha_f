@@ -27,7 +27,7 @@
         </div>
         <div class="goods-bottom">
             <div>
-                <van-button size="large" type="primary">ADD TO CART</van-button>
+                <van-button size="large" type="primary" @click="addGoodsToCart">ADD TO CART</van-button>
             </div>
             <div>
                 <van-button size="large" type="danger">Buy</van-button>
@@ -78,6 +78,29 @@
             onClickLeft(){ // go to last page
                 this.$router.go(-1)
             },
+            addGoodsToCart(){
+                //extract caretInfo for local first
+                let cartInfo = localStorage.cartInfo ? JSON.parse(localStorage.cartInfo) :[]
+                //check if target product is already exist
+                let isHaveGoods=cartInfo.find(item=>item.goodsId==this.goodsId)
+                console.log(isHaveGoods)
+                if(!isHaveGoods){ // add this product to the cart
+                    let newGoodsInfo={
+                        goodsId:this.goodsInfo.ID,
+                        Name:this.goodsInfo.NAME,
+                        price:this.goodsInfo.PRESENT_PRICE,
+                        image:this.goodsInfo.IMAGE1,
+                        count:1
+                    }
+                    cartInfo.push(newGoodsInfo) 
+                    localStorage.cartInfo=JSON.stringify(cartInfo) //save to local
+                    Toast.success('add to cart success!')
+
+                }else{
+                    Toast.success('this product is already exist!')
+                }
+                this.$router.push({name:'Cart'}) 
+            }
         },
         filters:{
             moneyFilter(money){
