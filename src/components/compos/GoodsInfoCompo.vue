@@ -32,4 +32,7 @@
        text-overflow: ellipsis;
        white-space:nowrap; 
     }
+    .goods-info{
+    }
+
 </style>

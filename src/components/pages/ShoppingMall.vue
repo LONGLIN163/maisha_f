@@ -69,7 +69,7 @@
             <div class="hot-goods">
                 <van-list>
                         <van-row gutter="20">
-                            <van-col span="12" v-for="( item, index) in hotGoods" :key="index">
+                            <van-col class="hotgoodsitem"  span="12" v-for="( item, index) in hotGoods" :key="index">
                                 <GoodsInfoCompo 
                                  :goodsImage='item.image' 
                                  :goodsName='item.name' 
@@ -240,11 +240,11 @@
   }
 
   .hot-goods{
-    height: 130rem;
+    height: 150rem;
     overflow: hidden;
     background-color: #fff;
     padding-top: 15px;
-
   }
+
 
 </style>
