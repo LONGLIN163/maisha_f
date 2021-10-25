@@ -1,4 +1,5 @@
-const BASEURL = "https://mocki.io/v1/56645569-6ae1-4faa-a9cc-25a88f18dd82"
+//const BASEURL = "https://mocki.io/v1/56645569-6ae1-4faa-a9cc-25a88f18dd82"
+const BASEURL = "https://mocki.io/v1/ed975817-ee55-47a1-bff2-f684e94d53d1"
 const LOCALURL = "http://localhost:3000/"
 const serviceApi = {
     getShoppingMallInfo:BASEURL+'',

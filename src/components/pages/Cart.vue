@@ -5,7 +5,7 @@
             <van-nav-bar   title="Cart" /> 
         </div>
         <div class="card-title">
-            <van-button size="small" type="danger" @click="clearCart" plain>清空购物车</van-button>
+            <van-button size="small" type="danger" @click="clearCart" plain>Empty Cart</van-button>
         </div>
         <div class="cart-list">
             <div class="cart-row" v-for="(item,index) in cartInfo" :key="index">
@@ -19,13 +19,13 @@
                 </div>
                 <div class="cart-goods-price">
                     <div>
-                            {{item.price |moneyFilter}}
+                            {{item.price |moneyFilter}} €
                     </div>
                     <div>
                         x{{item.count}}
                     </div>
                     <div class="allPrice">
-                        {{item.price*item.count | moneyFilter}}
+                        {{item.price*item.count | moneyFilter}} €
                     </div>
 
                 </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="totalMoney">
 
-            Total: {{totalMoney | moneyFilter}}
+            Total: {{totalMoney | moneyFilter}} €
 
         </div>
     </div>

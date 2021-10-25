@@ -4,16 +4,16 @@
             <div class="floor-title">{{floorTitle}}</div>
 
             <div class="floor-anomaly">
-                <div class="floor-one"><img :src="floorData0.image" width="100%" /></div>
+                <div class="floor-one"><img :src="floorData0.image" height="100%" width="100%" /></div>
                 <div>
                     <div class="floor-two"><img :src="floorData1.image" width="100%" /></div>
-                    <div><img :src="floorData2.image" width="100%" /></div>
+                    <div class="floor-two"><img :src="floorData2.image" width="100%" /></div>
                 </div>
             </div>
 
             <div class="floor-rule">
                 <div v-for="(item ,index) in floorData.slice(3)" :key="index">
-                    <img :src="item.image" width="100%"/>
+                    <img :src="item.image" height="100%" width="100%"/>
                 </div>
             </div>
  
@@ -54,6 +54,7 @@
     font-size: 14px;
     line-height: 1.8rem;
     height: 1.8rem;
+    padding-top: 10px;
   }
 
   .floor-anomaly{
@@ -70,17 +71,26 @@
   }
   .floor-one{
       border-right:1px solid #ddd;
-
+      height: 10rem;
+  }
+  .floor-one img{
+      height: 10rem;
   }
   .floor-two{
       border-bottom:1px solid #ddd;
+      height: 5rem;
+  }
+  .floor-two img{
+      height: 5rem;
+      height: 100%;
   }
 
-    .floor-rule{
+  .floor-rule{
       display: flex;
       flex-direction: row;
       flex-wrap:wrap;
       background-color: #fff;
+      height: 5rem;
 
   }
   .floor-rule div{

@@ -12,7 +12,7 @@
             <img :src="goodsInfo.IMAGE1" width="100%"/>
         </div>
         <div class="goods-name">{{goodsInfo.NAME}}</div>
-        <div class="goods-price">Price:{{goodsInfo.PRESENT_PRICE | moneyFilter}}$</div>
+        <div class="goods-price">Price:{{goodsInfo.PRESENT_PRICE | moneyFilter}}€</div>
         <div>
             <van-tabs swipeable sticky>
                 <van-tab title="Details">

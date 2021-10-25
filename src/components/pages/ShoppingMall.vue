@@ -9,7 +9,7 @@
                     <input type="text" class="search-input"/>
                 </van-col>
                 <van-col span="5">
-                    <van-button size="mini">search</van-button>
+                    <van-button size="mini">Search</van-button>
                 </van-col>
             </van-row>
         </div>
@@ -50,7 +50,7 @@
 
                                 <img :src="item.image" width="80%" />
                                 <div>{{item.goodsName}}</div>
-                                <div>{{item.price | moneyFilter}}$ ({{item.mallPrice | moneyFilter}}$)</div>
+                                <div>{{item.price | moneyFilter}}€ ({{item.mallPrice | moneyFilter}}€)</div>
 
                         </div>
                     </swiper-slide>
@@ -156,7 +156,7 @@
 <style scoped>
   .search-bar{
       height: 2.2rem;
-      background-color: #e5017d;
+      background-color: #ee4035;
       line-height:2.2rem;
       overflow: hidden;
 
@@ -168,9 +168,15 @@
       border-left:0px;
       border-right:0px;
       border-bottom: 1px solid rgb(255, 255, 255) !important ; 
-      background-color: #e5017d;
+      background-color: #ee4035;
       color:#fff;
   }
+
+  .van-button--mini {
+    top: -0.3rem;
+    right: -0.8rem
+  }
+
   .location-icon{
       padding-top: .2rem;
       padding-left: .3rem;
@@ -180,6 +186,15 @@
       max-height: 15rem;
       overflow: hidden;
   }
+  .swiper-area .swiper-wrapper{
+      height:10rem;
+  }
+
+  .swiper-area img{
+      height:16rem;
+  }
+
+
    .type-bar{
       background-color: #fff;
       margin:0 .3rem .3rem .3rem;
@@ -203,7 +218,7 @@
       border-bottom: 1px solid #eee;
       font-size:14px;
       padding: .2rem;
-      color: #e5017d;
+      color: #ee4035;
   }
   .recommend-body{
        border-bottom: 1px solid #eee;
@@ -213,6 +228,7 @@
       border-right: 1px solid #eee;
       font-size: 12px;
       text-align: center;
+      height: 10rem;
   }
 
   .hot-area{
@@ -220,12 +236,14 @@
       font-size:14px;
       height: 1.8rem;
       line-height:1.8rem;
+      padding-top: 15px;
   }
 
   .hot-goods{
     height: 130rem;
     overflow: hidden;
     background-color: #fff;
+    padding-top: 15px;
 
   }
 
