@@ -39,9 +39,9 @@
                                 v-model="loading"
                                 :finished="finished"
                                 @load="onLoad"
-                                >
+                            >
                                 <div class="list-item" v-for="(item,index) in goodList" :key="index">
-                                    <div class="list-item-img"><img :src="item.IMAGE1" width="100%"/></div>
+                                    <div class="list-item-img"><img :src="item.IMAGE1" width="100%" :onerror="errorImg"/></div>
                                     <div class="list-item-text">
                                         <div>{{item.NAME}}</div>
                                         <div class="">{{item.ORI_PRICE}}</div>
@@ -67,13 +67,14 @@
                 activeCategoryIndex:0, 
                 active:0,
                 categorySub:[],
-                //list:[], // the items of a subcat
                 loading:false,   //vant loading status
                 finished:false,  //vant loading done or not
                 isRefresh:false,
-                page:1,          //商品列表的页数
-                goodList:[],     //商品信息
-                categorySubId:'' //商品子分类ID
+                page:1, // init page number 1 
+                goodList:[],   
+                categorySubId:'', 
+                errorImg:'this.src="' + require('@/assets/images/errorimg.png') + '"',  
+
             }       
         },
         created(){
