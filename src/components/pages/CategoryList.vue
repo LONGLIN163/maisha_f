@@ -132,7 +132,9 @@
                 .then(res=>{
                     console.log("res---init---",res)
                     if(res.data.code == 200 && res.data.message ){
-                        this.category=res.data.message
+                        this.category=res.data.message.sort(function(a, b) { 
+                            return - ( a.ID - b.ID );
+                        });
                         //this.category=res.data.message[0].RECORDS
                         console.log(" this.category---------",this.category)
 
@@ -168,6 +170,8 @@
                     if(res.data.code == 200 && res.data.message ){
                         this.categorySub=res.data.message
                         this.active = 0 // active first subcat when switch big category
+
+                        console.log("res---categorySub---",this.categorySub)
 
                         this.categorySubId=this.categorySub[0].ID
                         this.onLoad()
