@@ -76,6 +76,7 @@
                 goodList:[],   
                 categorySubId:'', 
                 errorImg:'this.src="' + require('@/assets/images/errorimg.png') + '"',  
+                categoryId:1
 
             }       
         },
@@ -129,9 +130,12 @@
                     method:'get',
                 })
                 .then(res=>{
-                    //console.log(res)
+                    console.log("res---init---",res)
                     if(res.data.code == 200 && res.data.message ){
                         this.category=res.data.message
+                        //this.category=res.data.message[0].RECORDS
+                        console.log(" this.category---------",this.category)
+
                         this.getSubCategoryByCategoryId(this.category[0].ID) // get the first sub cat when we get big category
                     }else{
                         Toast('Server error, fetch data failed!')
@@ -160,7 +164,7 @@
                     data:{categoryId:categoryId}
                 })
                 .then(res=>{
-                    console.log(res)
+                    console.log("res---sub---",res)
                     if(res.data.code == 200 && res.data.message ){
                         this.categorySub=res.data.message
                         this.active = 0 // active first subcat when switch big category
@@ -184,6 +188,8 @@
                     // if (this.list.length >= 40) {
                     // this.finished = true;
                     // }
+                    //this.categorySubId=this.categorySubId ? this.categorySubId : this.categorySub[0].ID
+                    console.log()
                     this.categorySubId=this.categorySubId ? this.categorySubId : this.categorySub[0].ID
                     this.getGoodList()
                 },1000)
