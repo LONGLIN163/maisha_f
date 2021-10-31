@@ -133,7 +133,7 @@
                     console.log("res---init---",res)
                     if(res.data.code == 200 && res.data.message ){
                         this.category=res.data.message.sort(function(a, b) { 
-                            return - ( a.ID - b.ID );
+                            return - ( b.ID - a.ID );
                         });
                         //this.category=res.data.message[0].RECORDS
                         console.log(" this.category---------",this.category)
