@@ -86,46 +86,44 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card-title{
     height: 2rem;
     line-height:2rem;
-    background-color: #fff;
-    border-bottom:1px solid #E4E7ED;
+    background-color: $color-background-sub;
+    border-bottom:$color-divider;
     padding:5px;
     text-align: right;
 }
 .cart-list{
-    background-color: #fff;
-}
-.cart-row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
-    padding:0.5rem;
-    font-size:0.85rem;
-    border-bottom:1px solid #E4E7ED;
-
-
-}
-.cart-img{
-    flex:6;
-}
-.cart-text{
-    flex:14;
-    padding-left:10px;
-}
-.cart-control{
-    padding-top: 10px;
-}
-.cart-goods-price{
-    flex:4;
-    text-align: right;
+    background-color: $color-background-sub;
+    .cart-row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap:nowrap;
+        padding:0.5rem;
+        font-size:0.85rem;
+        border-bottom:$color-divider;
+        .cart-img{
+            flex:6;
+        }
+        .cart-text{
+            flex:14;
+            padding-left:10px;
+            .cart-control{
+                padding-top: 10px;
+            }
+        }
+        .cart-goods-price{
+            flex:4;
+            text-align: right;
+        }
+    }
 }
 .totalMoney{
     text-align: right;
-    background-color: #fff;
-    border-bottom:1px solid #E4E7ED;
+    background-color: $color-secondary;
+    border-bottom:$color-divider;
     padding: 5px;
 }
 </style>

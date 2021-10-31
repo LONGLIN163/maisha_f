@@ -110,29 +110,29 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
    .detail{
      font-size:0px;
     }
     .goods-name{
-        background-color: #fff;
+        background-color: $color-background-sub;
     }
     .goods-price{
-        background-color: #fff;
+        background-color: $color-background-sub;
     }
     .goods-bottom{
         position: fixed;
         bottom:0px;
         left:0px;
-        background-color: #FFF;
+        background-color: $color-background-sub;
         width:100%;
 
         display: flex;
         flex-direction: row;
         flex-flow: nowrap;
-    }
-    .goods-bottom > div{
-        flex:1;
-        padding:2px;
+        div{
+            flex:1;
+            padding:2px;
+        }
     }
 </style>

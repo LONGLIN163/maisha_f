@@ -42,26 +42,26 @@
     }
 </script>
 
-<style scoped>
-    .top-img{
-        width:70px;
-        height: 70px;
-        border-radius: 50px;
-    }
+<style lang="scss" scoped>
     .top{
         height:5rem;
         text-align: center;
         padding-top:2rem;
-        background-color: #EEA2AD;
+        background-color: $color-primary;
+        .top-img{
+            width:70px;
+            height: 70px;
+            border-radius: 50px;
+        }
     }
     .login{
         display: flex;
         flex-direction: row;
-        background-color: #fff;
+        background-color: $color-background-tape;
         padding:10px;
-    }
-    .login div{
-        flex:1;
-        text-align: center;
+        div{
+            flex:1;
+            text-align: center;
+        }
     }
 </style>

@@ -109,14 +109,14 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .register-panel{
         width:96%;
         border-radius: 5px;
         margin:20px auto;
         padding-bottom:50px;
-    }
-    .register-button{
-        padding-top:10px;
+        .register-button{
+            padding-top:10px;
+        }
     }
 </style>

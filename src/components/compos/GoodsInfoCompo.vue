@@ -25,14 +25,11 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .goods-name{
        padding: 0 8px;
        overflow: hidden;
        text-overflow: ellipsis;
        white-space:nowrap; 
     }
-    .goods-info{
-    }
-
 </style>

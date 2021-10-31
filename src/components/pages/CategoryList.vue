@@ -26,6 +26,8 @@
                                v-for="(item, index) in categorySub" 
                                :key="index" 
                                :title="item.MALL_SUB_NAME" 
+                               @click="clickSubCategory(index,item.ID)"
+                               :class="{subCategoryActive:activeSubCategoryIndex==index}"
                             >
 
                             </van-tab>
@@ -67,6 +69,7 @@
             return {
                 category:[],
                 activeCategoryIndex:0, 
+                activeSubCategoryIndex:0,
                 active:0,
                 categorySub:[],
                 loading:false,   //vant loading status
@@ -115,14 +118,16 @@
                 })
             },
             onClickCategorySub(index,title){
-                //console.log( this.categorySub)
+                //console.log("sub---",this.categorySub)
                 this.categorySubId= this.categorySub[index].ID
-                console.log(this.categorySubId)
+                //console.log(this.categorySubId)
                 // init info in current subcat page
                 this.goodList=[]
+                this.activeSubCategoryIndex=index
                 this.finished = false
                 this.page=1
                 this.onLoad()
+                //console.log("subCategoryActive---",this.activeSubCategoryIndex)
             },
             getCategory() {  
                 axios({
@@ -220,34 +225,43 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     #leftNav ul li {
         line-height: 2rem;
-        border-bottom:1px solid #E4E7ED;
+        border-bottom:$color-divider2;
         padding:3px;
         font-size:0.8rem;
         text-align: center;
+        .categoryActive{
+            background-color: $color-background-sub;
+        }
     }
-    .categoryActive{
-        background-color: #fff;
+
+    // ***this is vant bug***
+    .van-tab--active{
+        color:rgb(45, 57, 235) !important;
     }
-    .list-item{
-        display: flex;
-        flex-direction: row;
-        font-size:0.8rem;
-        border-bottom: 1px solid #f0f0f0;
-        background-color: #fff;
-        padding:5px;
-    }
+
+        
     #list-div{
+        .list-item{
+            display: flex;
+            flex-direction: row;
+            font-size:0.8rem;
+            border-bottom: 1px solid $color-background;
+            background-color: $color-background-sub;
+            padding:5px;
+            .list-item-img{
+                flex:8;
+            }
+            .list-item-text{
+                flex:16;
+                margin-top:10px;
+                margin-left:10px;
+            }
+        }
         overflow: scroll;
     }
-    .list-item-img{
-        flex:8;
-    }
-    .list-item-text{
-        flex:16;
-        margin-top:10px;
-        margin-left:10px;
-    }
+
+
 </style>

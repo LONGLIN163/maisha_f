@@ -47,7 +47,7 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
   .floor-title{
     text-align: center;
@@ -62,45 +62,43 @@
     flex-direction:row;
     background-color: #fff;
     border-bottom:1px solid #ddd;
-  }
-  .floor-anomaly div{
-     width:10rem;
- 
-     box-sizing: border-box;
-     -webkit-box-sizing: border-box;
-  }
-  .floor-one{
-      border-right:1px solid #ddd;
-      height: 10rem;
-  }
-  .floor-one img{
-      height: 10rem;
-  }
-  .floor-two{
-      border-bottom:1px solid #ddd;
-      height: 5rem;
-  }
-  .floor-two img{
-      height: 5rem;
-      height: 100%;
+    div{
+        width:10rem;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    .floor-one{
+        border-right:1px solid #ddd;
+        height: 10rem;
+        .floor-one img{
+            height: 10rem;
+        }
+    }
+    .floor-two{
+        border-bottom:1px solid #ddd;
+        height: 5rem;
+        .floor-two img{
+            height: 5rem;
+            height: 100%;
+        }
+    }
   }
 
   .floor-rule{
-      display: flex;
-      flex-direction: row;
-      flex-wrap:wrap;
-      background-color: #fff;
-      height: 5rem;
-
-  }
-  .floor-rule div{
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width:10rem;
-      border-bottom:1px solid #ddd;
-  }
-  .floor-rule div:nth-child(odd){
-      border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    background-color: #fff;
+    height: 5rem;
+    div{
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width:10rem;
+        border-bottom:1px solid #ddd;
+      }
+    div:nth-child(odd){
+        border-right: 1px solid #ddd;
+    }
   }
 
 </style>

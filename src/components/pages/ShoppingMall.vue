@@ -151,100 +151,105 @@
     }
 </script>
 
+<style lang="scss" scoped>
 
-
-<style scoped>
-  .search-bar{
-      height: 2.2rem;
-      background-color: #ee4035;
-      line-height:2.2rem;
-      overflow: hidden;
-
+.search-bar {
+  height: 2.2rem;
+  background-color: $color-primary;
+  line-height: 2.2rem;
+  overflow: hidden;
+  .search-input {
+    width: 100%;
+    height: 1.3rem;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid rgb(255, 255, 255) !important;
+    background-color: $color-background-tape;
+    color: $color-tab-default;
   }
-  .search-input{
-      width:100%;
-      height: 1.3rem;
-      border-top:0px;
-      border-left:0px;
-      border-right:0px;
-      border-bottom: 1px solid rgb(255, 255, 255) !important ; 
-      background-color: #ee4035;
-      color:#fff;
-  }
-
   .van-button--mini {
     top: -0.3rem;
-    right: -0.8rem
+    right: -0.8rem;
   }
-
-  .location-icon{
-      padding-top: .2rem;
-      padding-left: .3rem;
-  }
-  .swiper-area{
-      width:20rem;
-      max-height: 15rem;
-      overflow: hidden;
-  }
-  .swiper-area .swiper-wrapper{
-      height:10rem;
-  }
-
-  .swiper-area img{
-      height:16rem;
-  }
+}
 
 
-   .type-bar{
-      background-color: #fff;
-      margin:0 .3rem .3rem .3rem;
-      border-radius: .3rem;
-      font-size:14px;
-      display: flex;
-      flex-direction:row;
-      flex-wrap:nowrap;
-  }
-  .type-bar div{
-      padding: .3rem;
-      font-size: 12px;
-      text-align: center;
-      flex:1
-  }
-  .recommend-area{
-      background-color: #fff;
-      margin-top: .3rem;
-  }
-  .recommend-title{
-      border-bottom: 1px solid #eee;
-      font-size:14px;
-      padding: .2rem;
-      color: #ee4035;
-  }
-  .recommend-body{
-       border-bottom: 1px solid #eee;
-   }
-  .recommend-item{
-      width:99%;
-      border-right: 1px solid #eee;
-      font-size: 12px;
-      text-align: center;
-      height: 10rem;
+
+
+.location-icon {
+  padding-top: .2rem;
+  padding-left: .3rem;
+}
+
+.swiper-area {
+  width: 20rem;
+  max-height: 15rem;
+  overflow: hidden;
+
+  .swiper-wrapper {
+    height: 10rem;
   }
 
-  .hot-area{
-      text-align: center;
-      font-size:14px;
-      height: 1.8rem;
-      line-height:1.8rem;
-      padding-top: 15px;
+  img {
+    height: 16rem;
+  }
+}
+
+.type-bar {
+  background-color: $color-tab-default;
+  margin: 0 .3rem .3rem .3rem;
+  border-radius: .3rem;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  div {
+    padding: .3rem;
+    font-size: 12px;
+    text-align: center;
+    flex: 1;
+  }
+}
+
+.recommend-area {
+  background-color: $color-tab-default;
+  margin-top: .3rem;
+  .recommend-title {
+    border-bottom: $color-divider;
+    font-size: 14px;
+    padding: .2rem;
+  }
+  .recommend-body {
+    border-bottom: $color-divider;
   }
 
-  .hot-goods{
+  .recommend-item {
+    width: 99%;
+    border-right: $color-divider;
+    font-size: 12px;
+    text-align: center;
+    height: 10rem;
+  }
+}
+
+
+
+
+.hot-area {
+  text-align: center;
+  font-size: 14px;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  padding-top: 15px;
+  .hot-goods {
     height: 150rem;
     overflow: hidden;
-    background-color: #fff;
+    background-color: $color-tab-default;
     padding-top: 15px;
   }
+}
 
 
 </style>

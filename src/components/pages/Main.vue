@@ -60,6 +60,14 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+    .van-tabbar-item--active{
+        color: $color-primary !important;
+    }
+    .van-info{
+        color: $color-primary !important;
+    }
+
 
 </style>
