@@ -173,18 +173,14 @@
     right: -0.8rem;
   }
 }
-
-
-
-
 .location-icon {
   padding-top: .2rem;
   padding-left: .3rem;
 }
 
 .swiper-area {
-  width: 20rem;
-  max-height: 15rem;
+//   width: 20rem;
+  max-height: 18rem;
   overflow: hidden;
 
   .swiper-wrapper {
@@ -192,7 +188,7 @@
   }
 
   img {
-    height: 16rem;
+    height: 18rem;
   }
 }
 
@@ -233,9 +229,6 @@
     height: 10rem;
   }
 }
-
-
-
 
 .hot-area {
   text-align: center;

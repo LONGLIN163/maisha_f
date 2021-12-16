@@ -98,7 +98,7 @@
                 .then(res => {
                     if(res.data.code==200 && res.data.message){
                         // we need a promise to wait the login info get stored, then do the other thing
-                        new Promise((resolve,reject)=>{
+                        new Promise((resolve)=>{
                         // use localStorage to store loged in info
                         localStorage.userInfo={userName:this.username}
                         setTimeout(()=>{resolve()},500) 

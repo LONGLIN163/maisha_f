@@ -16,7 +16,8 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/',name: 'Main',component: Main,
+    // {path: '/',name: 'Main',component: Main,
+    {path: '/',component: Main,
       children:[
         { path: '/',name: 'ShoppingMall',component: ShoppingMall },
         { path: '/cart',name: 'Cart',component: Cart},
@@ -24,8 +25,6 @@ export default new Router({
         {path:'/member',name:'Member',component:Member},
       ]
     },
-    
-
     { path: '/register',name: 'Register',component: Register },
     { path: '/login',name: 'Login',component: Login },
     { path: '/goods',name: 'Goods',component: Goods },

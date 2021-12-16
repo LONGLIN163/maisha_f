@@ -56,7 +56,7 @@ export default {
     computed:{
         totalMoney(){
             let allMoney = 0
-            this.cartInfo.forEach((item,index) => {
+            this.cartInfo.forEach((item) => {
                allMoney += item.price*item.count
             });
 

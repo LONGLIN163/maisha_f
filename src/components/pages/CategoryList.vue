@@ -63,6 +63,7 @@
     import axios from "axios" 
     import serviceApi from '@/serviceApi.config.js'
     import {toMoney} from '@/filters/moneyFilter.js'
+    import {Toast} from 'vant'
 
     export default {
         data() {
@@ -78,7 +79,7 @@
                 page:1, // init page number 1 
                 goodList:[],   
                 categorySubId:'', 
-                errorImg:'this.src="' + require('@/assets/images/errorimg.png') + '"',  
+                errorImg:'this.src="' + require('@/assets/images/errorImg.png') + '"',  
                 categoryId:1
 
             }       
@@ -117,7 +118,7 @@
                     console.log(error)
                 })
             },
-            onClickCategorySub(index,title){
+            onClickCategorySub(index){
                 //console.log("sub---",this.categorySub)
                 this.categorySubId= this.categorySub[index].ID
                 //console.log(this.categorySubId)

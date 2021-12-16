@@ -3,12 +3,26 @@
         <div class="floor">
             <div class="floor-title">{{floorTitle}}</div>
 
-            <div class="floor-anomaly">
+            <!-- <div class="floor-anomaly">
                 <div class="floor-one"><img :src="floorData0.image" height="100%" width="100%" /></div>
                 <div>
                     <div class="floor-two"><img :src="floorData1.image" width="100%" /></div>
                     <div class="floor-two"><img :src="floorData2.image" width="100%" /></div>
                 </div>
+            </div> -->
+
+            <div class="floor-anomaly">
+                <van-row>
+                    <van-col span="12" class="floor-one">
+                        <img :src="floorData0.image" alt="">
+                    </van-col>
+                    <van-col span="12" class="floor-two">
+                        <div>
+                            <div><img :src="floorData1.image"/></div>
+                            <div><img :src="floorData2.image"/></div>
+                        </div>
+                    </van-col>
+                </van-row>
             </div>
 
             <div class="floor-rule">
@@ -36,7 +50,7 @@
 
         },
         watch:{ 
-            floorData:function(val) { //monitor asyn data
+            floorData:function() { //monitor asyn data
                 //console.log(this.floorData)
                 this.floorData0=this.floorData[0]
                 this.floorData1=this.floorData[1]
@@ -58,28 +72,24 @@
   }
 
   .floor-anomaly{
-    display: flex;
-    flex-direction:row;
-    background-color: #fff;
-    border-bottom:1px solid #ddd;
-    div{
-        width:10rem;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-    }
+    height: 10rem;
     .floor-one{
         border-right:1px solid #ddd;
         height: 10rem;
-        .floor-one img{
-            height: 10rem;
+        img{
+             width: 100%;
+             height:100%;
         }
     }
     .floor-two{
-        border-bottom:1px solid #ddd;
-        height: 5rem;
-        .floor-two img{
+        height: 10rem;
+        div{
+            //border-bottom:1px solid #ddd;
             height: 5rem;
-            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
   }
@@ -88,12 +98,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
+    //justify-content: center;
     background-color: #fff;
-    height: 5rem;
+    height: 8rem;
     div{
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        width:10rem;
+        width:50%;
         border-bottom:1px solid #ddd;
       }
     div:nth-child(odd){
