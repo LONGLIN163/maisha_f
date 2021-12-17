@@ -8,6 +8,10 @@ module.exports = {
             @import "@/assets/scss/mixins.scss";
           `,
         },
+        // css: {
+        //   additionalData: `import 'swiper/css/swiper.css';`
+        // }
       },
     },
   };
+

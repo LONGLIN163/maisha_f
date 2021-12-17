@@ -2,15 +2,6 @@
     <div>
         <div class="floor">
             <div class="floor-title">{{floorTitle}}</div>
-
-            <!-- <div class="floor-anomaly">
-                <div class="floor-one"><img :src="floorData0.image" height="100%" width="100%" /></div>
-                <div>
-                    <div class="floor-two"><img :src="floorData1.image" width="100%" /></div>
-                    <div class="floor-two"><img :src="floorData2.image" width="100%" /></div>
-                </div>
-            </div> -->
-
             <div class="floor-anomaly">
                 <van-row>
                     <van-col span="12" class="floor-one">
@@ -50,8 +41,8 @@
 
         },
         watch:{ 
-            floorData:function() { //monitor asyn data
-                //console.log(this.floorData)
+            //monitor asyn data
+            floorData:function() { 
                 this.floorData0=this.floorData[0]
                 this.floorData1=this.floorData[1]
                 this.floorData2=this.floorData[2]
@@ -73,10 +64,10 @@
 
   .floor-anomaly{
     height: 10rem;
-    .floor-one{
+    .floor-one {
         border-right:1px solid #ddd;
         height: 10rem;
-        img{
+        img {
              width: 100%;
              height:100%;
         }
@@ -84,7 +75,6 @@
     .floor-two{
         height: 10rem;
         div{
-            //border-bottom:1px solid #ddd;
             height: 5rem;
             img{
                 width: 100%;
@@ -98,7 +88,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    //justify-content: center;
     background-color: #fff;
     height: 8rem;
     div{

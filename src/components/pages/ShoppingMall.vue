@@ -89,7 +89,7 @@
     import axios from "axios" 
 
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    //import 'swiper/css/swiper.css'
     import FloorCompo from '@/components/compos/FloorCompo'
     import GoodsInfoCompo from '@/components/compos/GoodsInfoCompo'
     import {toMoney} from '@/filters/moneyFilter.js'
@@ -179,7 +179,6 @@
 }
 
 .swiper-area {
-//   width: 20rem;
   max-height: 18rem;
   overflow: hidden;
 
