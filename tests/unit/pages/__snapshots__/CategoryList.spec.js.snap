@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryList renders a div 1`] = `
+<div>
+  <div class="navbar-div">
+    <div class="van-nav-bar van-hairline--bottom">
+      <div class="van-nav-bar__content">
+        <div class="van-nav-bar__title van-ellipsis">Category</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-row">
+      <div class="van-col van-col--6">
+        <div id="leftNav">
+          <ul></ul>
+        </div>
+      </div>
+      <div class="van-col van-col--18">
+        <div class="tabCategorySub">
+          <div class="van-tabs van-tabs--line">
+            <div class="van-tabs__wrap">
+              <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
+                <div class="van-tabs__line"></div>
+              </div>
+            </div>
+            <div class="van-tabs__content"></div>
+          </div>
+        </div>
+        <div id="list-div">
+          <div class="van-pull-refresh">
+            <div class="van-pull-refresh__track" style="transition-duration: 0ms;">
+              <div class="van-pull-refresh__head"></div>
+              <div role="feed" class="van-list">
+                <div class="van-list__placeholder"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

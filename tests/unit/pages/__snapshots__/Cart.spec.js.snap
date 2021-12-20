@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart renders a div 1`] = `
+<div>
+  <div class="navbar-div">
+    <div class="van-nav-bar van-hairline--bottom">
+      <div class="van-nav-bar__content">
+        <div class="van-nav-bar__title van-ellipsis">Cart</div>
+      </div>
+    </div>
+  </div>
+  <div class="card-title"><button class="van-button van-button--danger van-button--small van-button--plain">
+      <div class="van-button__content"><span class="van-button__text">Empty Cart</span></div>
+    </button></div>
+  <div class="cart-list"></div>
+  <div class="totalMoney">
+
+    Total: 0.00 €
+
+  </div>
+</div>
+`;

@@ -4,7 +4,7 @@ exports[`ShoppingMall renders a div 1`] = `
 <div>
   <div class="search-bar">
     <div class="van-row">
-      <div class="van-col van-col--3"><img src="" alt="" width="70%" class="location-icon"></div>
+      <div class="van-col van-col--3"><img src="[object Object]" alt="" width="70%" class="location-icon"></div>
       <div class="van-col van-col--16"><input type="text" class="search-input"></div>
       <div class="van-col van-col--5"><button class="van-button van-button--default van-button--mini">
           <div class="van-button__content"><span class="van-button__text">Search</span></div>
@@ -20,7 +20,7 @@ exports[`ShoppingMall renders a div 1`] = `
   <div class="ad-banner"><img width="100%" data-src="undefined" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
   <div class="recommend-area">
     <div class="recommend-title">
-      Recommendation
+      Recommend
     </div>
     <div class="recommend-body">
       <div class="swiper-container swiper-container-initialized swiper-container-horizontal">

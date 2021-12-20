@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Goods renders a div 1`] = `
+<div>
+  <div class="navbar-div">
+    <div class="van-nav-bar van-hairline--bottom">
+      <div class="van-nav-bar__content">
+        <div class="van-nav-bar__left"><i class="van-icon van-icon-arrow-left van-nav-bar__arrow">
+            <!---->
+          </i><span class="van-nav-bar__text">Back</span></div>
+        <div class="van-nav-bar__title van-ellipsis">Product Details</div>
+      </div>
+    </div>
+  </div>
+  <div class="topimage-div"><img width="100%"></div>
+  <div class="goods-name"></div>
+  <div class="goods-price">Price:0.00€</div>
+  <div>
+    <div class="van-tabs van-tabs--line">
+      <div>
+        <div class="van-sticky">
+          <div class="van-tabs__wrap">
+            <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
+              <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">Details</span></div>
+              <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">Comment</span></div>
+              <div class="van-tabs__line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div role="tabpanel" class="van-tab__pane" style="">
+          <div class="detail"></div>
+        </div>
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="goods-bottom">
+    <div><button class="van-button van-button--primary van-button--large">
+        <div class="van-button__content"><span class="van-button__text">ADD TO CART</span></div>
+      </button></div>
+    <div><button class="van-button van-button--danger van-button--large">
+        <div class="van-button__content"><span class="van-button__text">Buy</span></div>
+      </button></div>
+  </div>
+</div>
+`;

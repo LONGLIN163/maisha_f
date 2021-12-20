@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.23.0",
+    "babel-core": "^7.0.0-bridge.0",
     "core-js": "^3.6.5",
     "swiper": "^5.4.5",
     "vant": "^2.12.30",
@@ -19,6 +20,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
     "@babel/preset-env": "^7.4.5",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -28,8 +31,12 @@
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "jest-serializer-vue": "^2.0.2",
+    "jsdom": "^19.0.0",
+    "jsdom-global": "^3.0.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"

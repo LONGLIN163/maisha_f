@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Member renders a div 1`] = `
+<div>
+  <div>
+    <div class="van-nav-bar van-hairline--bottom">
+      <div class="van-nav-bar__content">
+        <div class="van-nav-bar__title van-ellipsis">Member</div>
+      </div>
+    </div>
+  </div>
+  <div class="top"><img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" class="top-img"></div>
+  <div class="login">
+    <div><button class="van-button van-button--warning van-button--normal">
+        <div class="van-button__content"><span class="van-button__text">Sign in</span></div>
+      </button></div>
+    <div><button class="van-button van-button--primary van-button--normal">
+        <div class="van-button__content"><span class="van-button__text">Singn up</span></div>
+      </button></div>
+  </div>
+  <div>
+    <div class="van-cell-group van-hairline--top-bottom">
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>Card</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+          <!---->
+        </i>
+      </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>Address</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+          <!---->
+        </i>
+      </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>Orders</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+          <!---->
+        </i>
+      </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>Member rights</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+          <!---->
+        </i>
+      </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>Contact</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+          <!---->
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;

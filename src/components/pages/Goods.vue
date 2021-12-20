@@ -6,7 +6,7 @@
                 left-text="Back"
                 left-arrow
                 @click-left="onClickLeft"
-            />
+            ></van-nav-bar>
         </div>
         <div class="topimage-div">
             <img :src="goodsInfo.IMAGE1" width="100%"/>

@@ -1,11 +1,9 @@
 import { shallowMount,mount, createLocalVue} from '@vue/test-utils'
-import ShoppingMall from '@/components/pages/ShoppingMall.vue'
+const Vant=require("vant")
+import Cart from '@/components/pages/Cart.vue'
 
 import Vue from 'vue'
 
-import swiper from 'swiper/css/swiper.css'
-
-const Vant=require("vant")
 
 const {Lazyload}=Vant
 
@@ -16,12 +14,13 @@ localVue.use(Vant);
 
 
 
-describe('ShoppingMall', () => {
-  const wrapper = mount(ShoppingMall,{
+describe('Cart', () => {
+  const wrapper = mount(Cart,{
     localVue,
-    Lazyload,
-    swiper
+    Lazyload
   })
+
+  console.log("cart wrapper---",wrapper)
 
   it('renders a div', () => {
     expect(wrapper).toMatchSnapshot()

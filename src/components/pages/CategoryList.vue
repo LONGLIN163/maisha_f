@@ -87,12 +87,11 @@
         created(){
             this.getCategory();
         },
-        mounted(){
-            let winHeight = document.documentElement.clientHeight
-            document.getElementById("leftNav").style.height= winHeight-46-50 + 'px'
-            document.getElementById('list-div').style.height=winHeight-90-50 + 'px'
-
-        }, 
+        // mounted(){
+        //     let winHeight = document.documentElement.clientHeight
+        //     document.getElementById("leftNav").style.height= winHeight-46-50 + 'px'
+        //     document.getElementById('list-div').style.height=winHeight-90-50 + 'px'
+        // }, 
         methods:{
             getGoodList(){
                     axios({
@@ -119,16 +118,12 @@
                 })
             },
             onClickCategorySub(index){
-                //console.log("sub---",this.categorySub)
                 this.categorySubId= this.categorySub[index].ID
-                //console.log(this.categorySubId)
-                // init info in current subcat page
                 this.goodList=[]
                 this.activeSubCategoryIndex=index
                 this.finished = false
                 this.page=1
                 this.onLoad()
-                //console.log("subCategoryActive---",this.activeSubCategoryIndex)
             },
             getCategory() {  
                 axios({
@@ -141,7 +136,6 @@
                         this.category=res.data.message.sort(function(a, b) { 
                             return - ( b.ID - a.ID );
                         });
-                        //this.category=res.data.message[0].RECORDS
                         console.log(" this.category---------",this.category)
 
                         this.getSubCategoryByCategoryId(this.category[0].ID) // get the first sub cat when we get big category
@@ -191,15 +185,6 @@
             },
             onLoad(){
                 setTimeout(()=>{
-                    // for(let i=0;i<10;i++){
-                    //     this.list.push(this.list.length+1)
-                    // }
-                    // this.loading=false;
-                    // if (this.list.length >= 40) {
-                    // this.finished = true;
-                    // }
-                    //this.categorySubId=this.categorySubId ? this.categorySubId : this.categorySub[0].ID
-                    console.log()
                     this.categorySubId=this.categorySubId ? this.categorySubId : this.categorySub[0].ID
                     this.getGoodList()
                 },1000)
@@ -214,7 +199,6 @@
                 }, 500);
             },
             goGoods(id){
-                //this.$router.push({path:'/Goods',query:{goodsId:id}})
                 this.$router.push({name:'Goods',params:{goodsId:id}})
             }
         },
