@@ -7,6 +7,7 @@
                 left-arrow
                 @click-left="onClickLeft"
             ></van-nav-bar>
+            <!--***van-nav-bar has to be a close tag, otherwise will have error occurs in testing***-->
         </div>
         <div class="topimage-div">
             <img :src="goodsInfo.IMAGE1" width="100%"/>

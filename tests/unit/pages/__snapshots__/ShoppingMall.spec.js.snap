@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ShoppingMall renders a div 1`] = `
+exports[`ShoppingMall renders ShoppingMall 1`] = `
 <div>
   <div class="search-bar">
     <div class="van-row">

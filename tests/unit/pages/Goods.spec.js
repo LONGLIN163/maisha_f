@@ -19,7 +19,7 @@ describe('Goods', () => {
     router
   })
 
-  it('renders a div', () => {
+  it('renders Goods', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })

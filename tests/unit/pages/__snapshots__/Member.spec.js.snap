@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Member renders a div 1`] = `
+exports[`Member renders Member 1`] = `
 <div>
   <div>
     <div class="van-nav-bar van-hairline--bottom">

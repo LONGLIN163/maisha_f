@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cart renders a div 1`] = `
+exports[`Cart renders Cart 1`] = `
 <div>
   <div class="navbar-div">
     <div class="van-nav-bar van-hairline--bottom">

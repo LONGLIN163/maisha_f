@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CategoryList renders a div 1`] = `
+exports[`CategoryList renders CategoryList 1`] = `
 <div>
   <div class="navbar-div">
     <div class="van-nav-bar van-hairline--bottom">

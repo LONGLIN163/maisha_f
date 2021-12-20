@@ -12,14 +12,12 @@ Vue.use(Field)
 const localVue = createLocalVue();
 localVue.use(Vant); 
 
-
-
 describe('Member', () => {
   const wrapper = mount(Member,{
     localVue,
   })
 
-  it('renders a div', () => {
+  it('renders Member', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })

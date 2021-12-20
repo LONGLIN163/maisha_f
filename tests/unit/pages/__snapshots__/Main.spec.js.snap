@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main renders a Main 1`] = `
+<div>
+  <div class="main-div">
+    <!---->
+  </div>
+  <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
+    <div class="van-tabbar-item">
+      <div class="van-tabbar-item__icon"><i class="van-icon van-icon-shop">
+          <!---->
+        </i>
+        <!---->
+      </div>
+      <div class="van-tabbar-item__text">Home</div>
+    </div>
+    <div class="van-tabbar-item">
+      <div class="van-tabbar-item__icon"><i class="van-icon van-icon-records">
+          <!---->
+        </i>
+        <!---->
+      </div>
+      <div class="van-tabbar-item__text">List</div>
+    </div>
+    <div class="van-tabbar-item">
+      <div class="van-tabbar-item__icon"><i class="van-icon van-icon-cart">
+          <!---->
+        </i>
+        <!---->
+      </div>
+      <div class="van-tabbar-item__text">Shopping Cart</div>
+    </div>
+    <div class="van-tabbar-item">
+      <div class="van-tabbar-item__icon"><i class="van-icon van-icon-contact">
+          <!---->
+        </i>
+        <div class="van-info">3</div>
+      </div>
+      <div class="van-tabbar-item__text">Account</div>
+    </div>
+  </div>
+</div>
+`;
