@@ -6,10 +6,10 @@
                     <img :src="locationIcon" alt="" width="70%" class="location-icon">
                 </van-col>
                 <van-col span="16">
-                    <input type="text" class="search-input"/>
+                    <input type="text" class="search-input" data-test="search-input"/>
                 </van-col>
                 <van-col span="5">
-                    <van-button size="mini">Search</van-button>
+                    <van-button size="mini" data-search="Search">Search</van-button>
                 </van-col>
             </van-row>
         </div>
@@ -17,7 +17,7 @@
         <!-- slider -->
         <div class="swiper-area">
             <van-swipe :autoplay="1000">
-                <van-swipe-item v-for="(banner,index) in bannerPicArray" :key="index">
+                <van-swipe-item v-for="(banner,index) in bannerPicArray" :key="index" data-swipper="bannerSwippers">
                     <img v-lazy="banner.image" width="100%"/>
                 </van-swipe-item>
             </van-swipe>
@@ -68,17 +68,17 @@
             <div class="hot-title">HOT</div>
             <div class="hot-goods">
                 <van-list>
-                        <van-row gutter="20">
-                            <van-col class="hotgoodsitem"  span="12" v-for="( item, index) in hotGoods" :key="index">
-                                <GoodsInfoCompo 
-                                 :goodsImage='item.image' 
-                                 :goodsName='item.name' 
-                                 :goodsPrice='item.mallPrice'
-                                 :goodsId='item.goodsId' 
-                                ></GoodsInfoCompo>
-                            </van-col>
-                        </van-row>
-                    </van-list>
+                  <van-row gutter="20">
+                      <van-col class="hotgoodsitem"  span="12" v-for="( item, index) in hotGoods" :key="index">
+                          <GoodsInfoCompo 
+                            :goodsImage='item.image' 
+                            :goodsName='item.name' 
+                            :goodsPrice='item.mallPrice'
+                            :goodsId='item.goodsId' 
+                          ></GoodsInfoCompo>
+                      </van-col>
+                  </van-row>
+                </van-list>
             </div>
         </div>
 
@@ -111,22 +111,16 @@
                 floor2:[],
                 floor3:[],
                 floorName:{},
-                hotGoods:[]
+                hotGoods:[{},{}]// ***For rendering ui in the snapshot, we have to give this arr some values even there is no initial data.***
             }
         },
-        components:{
-            swiper,
-            swiperSlide,
-            FloorCompo,
-            GoodsInfoCompo
-        },
-        created(){
+        methods:{
+          initData(){
             axios({
                 url:serviceApi.getShoppingMallInfo,
                 method:"GET",
-
             }).then(res=>{
-                console.log(res)
+                //console.log("res shoppingmore---",res)
                 if(res.status==200){
                     this.category = res.data.data.category;
                     this.adBanner = res.data.data.advertesPicture
@@ -136,11 +130,23 @@
                     this.floor2 = res.data.data.floor2        
                     this.floor3 = res.data.data.floor3        
                     this.floorName = res.data.data.floorName  
-                    this.hotGoods = res.data.data.hotGoods      
+                    this.hotGoods = res.data.data.hotGoods  
+                    console.log("this.hotGoods---",this.hotGoods)
+                    this.msg="xixi"  
                 }
             }).catch(err=>{
                 console.log(err)
             })
+          }
+        },
+        components:{
+            swiper,
+            swiperSlide,
+            FloorCompo,
+            GoodsInfoCompo
+        },
+        created(){
+           this.initData();
         },
         filters:{
             moneyFilter(money){

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ShoppingMall renders ShoppingMall 1`] = `
+exports[`ShoppingMall should renders ShoppingMall 1`] = `
 <div>
   <div class="search-bar">
     <div class="van-row">
       <div class="van-col van-col--3"><img src="[object Object]" alt="" width="70%" class="location-icon"></div>
       <div class="van-col van-col--16"><input type="text" class="search-input"></div>
-      <div class="van-col van-col--5"><button class="van-button van-button--default van-button--mini">
+      <div class="van-col van-col--5"><button data-search="Search" class="van-button van-button--default van-button--mini">
           <div class="van-button__content"><span class="van-button__text">Search</span></div>
         </button></div>
     </div>
@@ -83,7 +83,22 @@ exports[`ShoppingMall renders ShoppingMall 1`] = `
     <div class="hot-title">HOT</div>
     <div class="hot-goods">
       <div role="feed" class="van-list">
-        <div class="van-row"></div>
+        <div class="van-row">
+          <div class="hotgoodsitem van-col van-col--12" style="padding-right: 10px;">
+            <div class="goods-info">
+              <div class="goods-image"><img width="90%" data-src="undefined" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+              <div class="goods-name"></div>
+              <div class="goods-price">0.00 €</div>
+            </div>
+          </div>
+          <div class="hotgoodsitem van-col van-col--12" style="padding-left: 10px;">
+            <div class="goods-info">
+              <div class="goods-image"><img width="90%" data-src="undefined" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+              <div class="goods-name"></div>
+              <div class="goods-price">0.00 €</div>
+            </div>
+          </div>
+        </div>
         <div class="van-list__placeholder"></div>
       </div>
     </div>

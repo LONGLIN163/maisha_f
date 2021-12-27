@@ -2,8 +2,15 @@
 
     <div>
         <div class="navbar-div">
-            <van-nav-bar   title="Cart" /> 
+            <van-nav-bar
+                title="Cart"
+                left-text="Back"
+                left-arrow
+                @click-left="onClickLeft"
+            ></van-nav-bar>
+            <!--***van-nav-bar has to be a close tag, otherwise will have error occurs in testing***-->
         </div>
+
         <div class="card-title">
             <van-button size="small" type="danger" @click="clearCart" plain>Empty Cart</van-button>
         </div>
@@ -76,6 +83,9 @@ export default {
         clearCart(){
             localStorage.removeItem('cartInfo')
             this.cartInfo=[]
+        },
+        onClickLeft(){ // go to last page
+            this.$router.go(-1)
         }
     },
     filters:{

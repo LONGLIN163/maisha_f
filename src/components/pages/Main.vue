@@ -9,9 +9,9 @@
 
         <van-tabbar v-model="active" @change="changeTabbar(active)">
             <van-tabbar-item icon="shop">Home</van-tabbar-item>
-            <van-tabbar-item icon="records">List</van-tabbar-item>
+            <van-tabbar-item icon="records" data-test="tab-list">List</van-tabbar-item>
             <van-tabbar-item icon="cart">Shopping Cart</van-tabbar-item>
-            <van-tabbar-item icon="contact" info="3">Account</van-tabbar-item>
+            <van-tabbar-item icon="contact" info="3" data-test="tab-account">Account</van-tabbar-item>
         </van-tabbar>
 
     </div>

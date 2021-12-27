@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="goodsbox">
         <div class="navbar-div">
             <van-nav-bar
                 title="Product Details"
@@ -16,19 +16,17 @@
         <div class="goods-price">Price:{{goodsInfo.PRESENT_PRICE | moneyFilter}}€</div>
         <div>
             <van-tabs swipeable sticky>
-                <van-tab title="Details">
-                <div class="detail" v-html="goodsInfo.DETAIL">
+                <van-tab  title="Details">
+                    <div class="detail" v-html="goodsInfo.DETAIL">
 
-                </div>
+                    </div>
                 </van-tab>
-                <van-tab title="Comment">
-                    no any comments...
-                </van-tab>
+                <van-tab title="Comment">no any comments...</van-tab>
             </van-tabs>
         </div>
         <div class="goods-bottom">
             <div>
-                <van-button size="large" type="primary" @click="addGoodsToCart">ADD TO CART</van-button>
+                <van-button data-test="addtocard" size="large" type="primary" @click="addGoodsToCart">ADD TO CART</van-button>
             </div>
             <div>
                 <van-button size="large" type="danger">Buy</van-button>

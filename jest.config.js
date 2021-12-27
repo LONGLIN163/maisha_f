@@ -15,23 +15,32 @@ module.exports = {
   modulePaths: [
     "<rootDir>"
   ],
+
   moduleFileExtensions: [
     "js",
     "json",
     "vue"
   ],
-  snapshotSerializers: ["jest-serializer-vue"], // get dom snapshot if you want to see the snapshot
+
+  // get dom snapshot if you want to see the snapshot
+  snapshotSerializers: ["jest-serializer-vue"],
+
   transform: {
     "^.+\\.js$": "babel-jest",
     "^.+\\.vue$": "vue-jest"
   },
+
   transformIgnorePatterns: ['/src/assets'],
+
   // ..
   moduleNameMapper: {
     "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub", // testing file will can import style file to the testing script
     '^@/(.*)$': '<rootDir>/src/$1',
   },
+
   collectCoverage: false,
+
+  //testEnvironment: 'jsdom', // it doesn matter if us jsdom.
   collectCoverageFrom: [
     "**/*.{js,vue}",
     "!**/node_modules/**",
@@ -40,5 +49,6 @@ module.exports = {
     "!**/*.config.*",
     "!src/main.js"
   ],
-  //testEnvironment: 'jsdom', // it doesn matter if us jsdom.
+
+  preset: '@vue/cli-plugin-unit-jest'
 };

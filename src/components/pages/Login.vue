@@ -2,6 +2,7 @@
     <div>
        <van-nav-bar
         title="Login"
+        data-test="logintitle"
         left-text="back"
         left-arrow
         @click-left="goBack"
@@ -12,6 +13,7 @@
             v-model="username"
             label="User Name"
             icon="clear"
+            data-test="username"
             placeholder="Please input user name"
             :error-message="usernameErrorMsg"
             required
@@ -21,7 +23,8 @@
         <van-field
             v-model="password"
             type="password"
-            label="Password"
+            data-test="password"
+            label="password"
             placeholder="Please input password"
             :error-message="passwordErrorMsg"
             required
@@ -29,6 +32,7 @@
         <div class="register-button">
             <van-button 
             type="primary" 
+            data-test="loginsubmit"
             @click="loginAction" 
             size="large" 
             :loading="openLoading" 
@@ -75,7 +79,7 @@
                     this.usernameErrorMsg=''
                 }
                 if(this.password.length<6){
-                    this.passwordErrorMsg="username can not be less than 6 digit"
+                    this.passwordErrorMsg="password can not be less than 6 digit"
                     isOk= false
                 }else{
                     this.passwordErrorMsg=''

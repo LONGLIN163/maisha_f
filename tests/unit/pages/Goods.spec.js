@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import { shallowMount,mount, createLocalVue} from '@vue/test-utils'
+import { mount, createLocalVue} from '@vue/test-utils'
 
 import Goods from '@/components/pages/Goods.vue'
 
