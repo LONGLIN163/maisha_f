@@ -1,7 +1,7 @@
 // https://docs.cypress.io/api/introduction/api.html
 
 
-describe('test-user shopping senarios', () => {
+describe('Test user shopping senarios', () => {
   beforeEach(() => {
     cy.visit("http://localhost:8080/#/")
     cy.viewport("iphone-x")
@@ -34,7 +34,7 @@ describe('test-user shopping senarios', () => {
     cy.url().should('include','/')
     cy.contains("Fruits and Vegetables").should("exist")
 
-    // test if the input field can be inputed,but current function is in progress
+    // test if the input field can be inputed,but current function is unfinished
 
     cy.log("***test if the input field can be inputed***")
     cy.get('[data-test="search-input"]')
@@ -66,6 +66,8 @@ describe('test-user shopping senarios', () => {
     cy.log("***3 click add to product, then go to cart page***")
     cy.get('[data-test="addtocard"]').click()
     cy.url().should('include','/cart')
+
+    // ignore the rest of test on the cart page
 
     cy.log("***4 go back the product detail page***")
     cy.go('back')
@@ -101,8 +103,8 @@ describe('test-user shopping senarios', () => {
     cy.log("***4 click one item and check if go to product detail***")
     cy.wait(5000)
     cy.get("#list-div > div > div > div.van-list > div:nth-child(2)").click()
-    cy.url().should('include','/goods')
-    cy.contains("ADD TO CART")
+    cy.url().should('include','/goods') // The test should be fine  when the page can come to product detail page, no need to dive deeper
+    cy.contains("ADD TO CART").should("exist")
 
     // ignore add to cart and comment tabs test...
 
