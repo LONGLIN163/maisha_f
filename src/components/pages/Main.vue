@@ -32,7 +32,7 @@
         },
         methods: {
             changeTabbar(active) {
-                console.log(active)
+                console.log("changeTabbar has been called")
                 switch(active){
                     case 0:
                         this.$router.push({name:'ShoppingMall'})
@@ -51,6 +51,7 @@
                 }
             },
             changeTabBarActive(){
+                console.log("changeTabBarActive has been called")
                 this.nowPath=this.$route.path
                 if(this.nowPath=='/cart'){
                     this.active=2;

@@ -131,8 +131,7 @@
                     this.floor3 = res.data.data.floor3        
                     this.floorName = res.data.data.floorName  
                     this.hotGoods = res.data.data.hotGoods  
-                    console.log("this.hotGoods---",this.hotGoods)
-                    this.msg="xixi"  
+                    //console.log("this.hotGoods---",this.hotGoods)
                 }
             }).catch(err=>{
                 console.log(err)

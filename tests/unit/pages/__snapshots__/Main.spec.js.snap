@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main renders a Main 1`] = `
+exports[`Main renders Main snapshot 1`] = `
 <div>
   <div class="main-div">
     <!---->
   </div>
   <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
-    <div class="van-tabbar-item">
+    <div class="van-tabbar-item van-tabbar-item--active" data-test="tab-shop">
       <div class="van-tabbar-item__icon"><i class="van-icon van-icon-shop">
           <!---->
         </i>
@@ -14,7 +14,7 @@ exports[`Main renders a Main 1`] = `
       </div>
       <div class="van-tabbar-item__text">Home</div>
     </div>
-    <div class="van-tabbar-item">
+    <div class="van-tabbar-item" data-test="tab-list">
       <div class="van-tabbar-item__icon"><i class="van-icon van-icon-records">
           <!---->
         </i>
@@ -22,7 +22,7 @@ exports[`Main renders a Main 1`] = `
       </div>
       <div class="van-tabbar-item__text">List</div>
     </div>
-    <div class="van-tabbar-item">
+    <div class="van-tabbar-item" data-test="tab-cart">
       <div class="van-tabbar-item__icon"><i class="van-icon van-icon-cart">
           <!---->
         </i>
@@ -30,7 +30,7 @@ exports[`Main renders a Main 1`] = `
       </div>
       <div class="van-tabbar-item__text">Shopping Cart</div>
     </div>
-    <div class="van-tabbar-item">
+    <div class="van-tabbar-item" data-test="tab-account">
       <div class="van-tabbar-item__icon"><i class="van-icon van-icon-contact">
           <!---->
         </i>

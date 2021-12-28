@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="navbar-div">
-            <van-nav-bar  title="Category" /> 
+            <van-nav-bar data-test="CategoryTitle"  title="Category" /> 
         </div>
         <div>
             <van-row>
