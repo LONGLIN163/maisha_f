@@ -34,6 +34,7 @@ describe('Member',  () => {
     await wrapper.find('[data-test="loginbtn"]').trigger('click');
     expect(goToLogin).toHaveBeenCalled()
   })
+  
   it('goToRegister() should have been called correctly ',async () => {
     await wrapper.find('[data-test="signupbtn"]').trigger('click');
     expect(goToRegister).toHaveBeenCalled()

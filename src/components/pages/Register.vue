@@ -4,12 +4,14 @@
         title="Sign Up"
         left-text="back"
         left-arrow
+        data-test="goBack"
         @click-left="goBack"
         />
 
         <div class="register-panel">
         <van-field
             v-model="username"
+            data-test="username"
             label="User Name"
             icon="clear"
             placeholder="Please input user name"
@@ -20,6 +22,7 @@
 
         <van-field
             v-model="password"
+            data-test="password"
             type="password"
             label="Password"
             placeholder="Please input password"
@@ -29,6 +32,7 @@
         <div class="register-button">
             <van-button 
             type="primary" 
+            data-test="registerAction"
             @click="registerAction" 
             size="large" 
             :loading="openLoading" 

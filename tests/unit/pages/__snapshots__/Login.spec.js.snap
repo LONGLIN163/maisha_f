@@ -2,7 +2,7 @@
 
 exports[`Login renders Login 1`] = `
 <div>
-  <div class="van-nav-bar van-hairline--bottom">
+  <div class="van-nav-bar van-hairline--bottom" data-test="logintitle">
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__left"><i class="van-icon van-icon-arrow-left van-nav-bar__arrow">
           <!---->
@@ -14,16 +14,16 @@ exports[`Login renders Login 1`] = `
     <div class="van-cell van-cell--required van-field">
       <div class="van-cell__title van-field__label"><span>User Name</span></div>
       <div class="van-cell__value van-field__value">
-        <div class="van-field__body"><input type="text" placeholder="Please input user name" class="van-field__control"></div>
+        <div class="van-field__body"><input type="text" data-test="username" placeholder="Please input user name" class="van-field__control"></div>
       </div>
     </div>
     <div class="van-cell van-cell--required van-field">
-      <div class="van-cell__title van-field__label"><span>Password</span></div>
+      <div class="van-cell__title van-field__label"><span>password</span></div>
       <div class="van-cell__value van-field__value">
-        <div class="van-field__body"><input type="password" placeholder="Please input password" class="van-field__control"></div>
+        <div class="van-field__body"><input type="password" data-test="password" placeholder="Please input password" class="van-field__control"></div>
       </div>
     </div>
-    <div class="register-button"><button class="van-button van-button--primary van-button--large">
+    <div class="register-button"><button data-test="loginsubmit" class="van-button van-button--primary van-button--large">
         <div class="van-button__content"><span class="van-button__text">Login</span></div>
       </button></div>
   </div>
