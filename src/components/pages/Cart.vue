@@ -12,7 +12,7 @@
         </div>
 
         <div class="card-title">
-            <van-button size="small" type="danger" @click="clearCart" plain>Empty Cart</van-button>
+            <van-button size="small" data-test="clearCart" type="danger" @click="clearCart" plain>Empty Cart</van-button>
         </div>
         <div class="cart-list">
             <div class="cart-row" v-for="(item,index) in cartInfo" :key="index">

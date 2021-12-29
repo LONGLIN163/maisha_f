@@ -98,3 +98,6 @@ export const mockGoodList=[
     _id: "6177254639ecdaaaa8136f20",
   }
 ]
+
+export const cartInfo=[
+    {"goodsId":"4a2dbf2d78f942f09b6c9bdd2a998af8","Name":"product name","price":6,"image":"http://images.baixingliangfan.cn/shopGoodsImg/20171225/20171225111353_2166.jpg","count":1},{"goodsId":"7f6e857e83b240508836717c8764a0b0","Name":"product name","price":12,"image":"http://images.baixingliangfan.cn/shopGoodsImg/20171226/20171226162234_480.jpg","count":1}]

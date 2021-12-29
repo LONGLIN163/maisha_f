@@ -5,14 +5,58 @@ exports[`Cart renders Cart 1`] = `
   <div class="navbar-div">
     <div class="van-nav-bar van-hairline--bottom">
       <div class="van-nav-bar__content">
+        <div class="van-nav-bar__left"><i class="van-icon van-icon-arrow-left van-nav-bar__arrow">
+            <!---->
+          </i><span class="van-nav-bar__text">Back</span></div>
         <div class="van-nav-bar__title van-ellipsis">Cart</div>
       </div>
     </div>
   </div>
-  <div class="card-title"><button class="van-button van-button--danger van-button--small van-button--plain">
+  <div class="card-title"><button data-test="clearCart" class="van-button van-button--danger van-button--small van-button--plain">
       <div class="van-button__content"><span class="van-button__text">Empty Cart</span></div>
     </button></div>
-  <div class="cart-list"></div>
+  <div class="cart-list">
+    <div class="cart-row">
+      <div class="cart-img"><img src="http://images.baixingliangfan.cn/shopGoodsImg/20171225/20171225111353_2166.jpg" width="100%"></div>
+      <div class="cart-text">
+        <div class="cart-goods-name">product name</div>
+        <div class="cart-control">
+          <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="text" role="spinbutton" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
+        </div>
+      </div>
+      <div class="cart-goods-price">
+        <div>
+          6.00 €
+        </div>
+        <div>
+          x1
+        </div>
+        <div class="allPrice">
+          6.00 €
+        </div>
+      </div>
+    </div>
+    <div class="cart-row">
+      <div class="cart-img"><img src="http://images.baixingliangfan.cn/shopGoodsImg/20171226/20171226162234_480.jpg" width="100%"></div>
+      <div class="cart-text">
+        <div class="cart-goods-name">product name</div>
+        <div class="cart-control">
+          <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="text" role="spinbutton" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
+        </div>
+      </div>
+      <div class="cart-goods-price">
+        <div>
+          12.00 €
+        </div>
+        <div>
+          x1
+        </div>
+        <div class="allPrice">
+          12.00 €
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="totalMoney">
 
     Total: 0.00 €
