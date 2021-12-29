@@ -19,19 +19,19 @@ describe('Login',  () => {
   // mock loginAction()
   const loginAction = jest.spyOn(Login.methods, 'loginAction')
     .mockImplementation(() => {
-      console.log("1. mock loginAction implementation")
+      //console.log("1. mock loginAction implementation")
       checkForm() && login() // call checkForm(set true), then call login
   })
   // mock checkForm()
   const checkForm = jest.spyOn(Login.methods, 'checkForm')
     .mockImplementation(() => {
-      console.log("2. mock checkForm implementation")
+      //console.log("2. mock checkForm implementation")
       return true
   })
   // mock login()
   const login = jest.spyOn(Login.methods, 'login')
     .mockImplementation(() => {
-      console.log("3. mock login implementation")
+      //console.log("3. mock login implementation")
   })
 
   beforeEach(() => {

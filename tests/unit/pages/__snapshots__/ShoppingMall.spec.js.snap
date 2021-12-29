@@ -5,7 +5,7 @@ exports[`ShoppingMall should renders ShoppingMall 1`] = `
   <div class="search-bar">
     <div class="van-row">
       <div class="van-col van-col--3"><img src="[object Object]" alt="" width="70%" class="location-icon"></div>
-      <div class="van-col van-col--16"><input type="text" class="search-input"></div>
+      <div class="van-col van-col--16"><input type="text" data-test="search-input" class="search-input"></div>
       <div class="van-col van-col--5"><button data-search="Search" class="van-button van-button--default van-button--mini">
           <div class="van-button__content"><span class="van-button__text">Search</span></div>
         </button></div>

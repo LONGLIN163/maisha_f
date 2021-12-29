@@ -22,45 +22,45 @@ describe('CategoryList',  () => {
     //wrapper.setData({ category: mockCategory })
     //wrapper.vm.category = mockCategory;
     //console.log("***",wrapper.vm.category)
-    console.log("**can not set data to vm before wrapper created**")
+    //console.log("**can not set data to vm before wrapper created**")
   })
 
   // mock getGoodList()
   const getGoodList = jest.spyOn(CategoryList.methods, 'getGoodList')
   .mockImplementation(() => {
-    console.log("mock getGoodList implementation")
+    //console.log("mock getGoodList implementation")
   })
   // mock goGoods()
   const goGoods = jest.spyOn(CategoryList.methods, 'goGoods')
   .mockImplementation(() => {
-    console.log("mock goGoods implementation")
+    //console.log("mock goGoods implementation")
   })
   // mock onLoad()
   const onLoad = jest.spyOn(CategoryList.methods, 'onLoad')
   .mockImplementation(async() => {
     await getGoodList()
-    console.log("mock onLoad implementation")
+    //console.log("mock onLoad implementation")
   })
 
   // mock clickCategory()
   const clickCategory = jest.spyOn(CategoryList.methods, 'clickCategory')
   .mockImplementation(() => {
     getSubCategoryByCategoryId() // we dont need have to pass some params
-    console.log("mock clickCategory implementation")
+    //console.log("mock clickCategory implementation")
   })
 
   // mock onClickCategorySub()
   const onClickCategorySub = jest.spyOn(CategoryList.methods, 'onClickCategorySub')
   .mockImplementation(() => {
     onLoad() 
-    console.log("mock clickCategory implementation")
+    //console.log("mock clickCategory implementation")
   })
 
   // mock getSubCategoryByCategoryId()
   const getSubCategoryByCategoryId = jest.spyOn(CategoryList.methods, 'getSubCategoryByCategoryId')
   .mockImplementation(() => {
     onLoad()
-    console.log("mock getSubCategoryByCategoryId implementation")
+    //console.log("mock getSubCategoryByCategoryId implementation")
   })
 
   beforeEach(() => {

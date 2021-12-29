@@ -13,19 +13,19 @@ describe('Cart', () => {
    // mock getCartInfo()
    const getCartInfo = jest.spyOn(Cart.methods, 'getCartInfo')
    .mockImplementation(() => {
-     console.log("mock getCartInfo implementation")
+     //console.log("mock getCartInfo implementation")
    })
   
    // mock totalMoney()
    const totalMoney = jest.spyOn(Cart.computed, 'totalMoney')
    .mockImplementation(() => {
-     console.log("mock totalMoney implementation")
+     //console.log("mock totalMoney implementation")
    })
   
    // mock clearCart()
    const clearCart = jest.spyOn(Cart.methods, 'clearCart')
    .mockImplementation(() => {
-     console.log("mock clearCart implementation")
+     //console.log("mock clearCart implementation")
    })
   
   beforeEach(() => {

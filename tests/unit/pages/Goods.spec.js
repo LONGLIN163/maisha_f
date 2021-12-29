@@ -20,8 +20,8 @@ describe('Goods', () => {
   // mock addGoodsToCart()
   const addGoodsToCart = jest.spyOn(Goods.methods, 'addGoodsToCart')
   .mockImplementation(() => {
-    console.log("mock addGoodsToCart implementation")
-    return true
+    //console.log("mock addGoodsToCart implementation")
+    //return true
   })
 
   beforeEach(() => {
@@ -39,7 +39,7 @@ describe('Goods', () => {
     expect(getInfo).toHaveBeenCalled()
   })
 
-  it('addGoodsToCart() should have been called correctly ',async () => {
+  it('addGoodsToCart() should have been called correctly ', async () => {
     await wrapper.find('[data-test="addtocard"]').trigger('click');
     expect(addGoodsToCart).toHaveBeenCalled()
   })

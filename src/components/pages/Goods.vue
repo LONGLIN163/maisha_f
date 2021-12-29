@@ -66,7 +66,7 @@
                     if(res.data.code == 200 && res.data.message ){
                             this.goodsInfo = res.data.message 
                     }else{
-                        Toast('Server error, fetching data failed!!!')
+                        //Toast('Server error, fetching data failed!!!')
                     }
                     console.log( this.goodsInfo)
                 })
@@ -77,12 +77,12 @@
             onClickLeft(){ // go to last page
                 this.$router.go(-1)
             },
-            addGoodsToCart(){
+            async addGoodsToCart(){
                 //extract caretInfo for local first
                 let cartInfo = localStorage.cartInfo ? JSON.parse(localStorage.cartInfo) :[]
                 //check if target product is already exist
-                let isHaveGoods=cartInfo.find(item=>item.goodsId==this.goodsId)
-                console.log(isHaveGoods)
+                let isHaveGoods=await cartInfo.find(item=>item.goodsId==this.goodsId)
+                //console.log(isHaveGoods)
                 if(!isHaveGoods){ // add this product to the cart
                     let newGoodsInfo={
                         goodsId:this.goodsInfo.ID,

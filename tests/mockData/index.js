@@ -101,3 +101,26 @@ export const mockGoodList=[
 
 export const cartInfo=[
     {"goodsId":"4a2dbf2d78f942f09b6c9bdd2a998af8","Name":"product name","price":6,"image":"http://images.baixingliangfan.cn/shopGoodsImg/20171225/20171225111353_2166.jpg","count":1},{"goodsId":"7f6e857e83b240508836717c8764a0b0","Name":"product name","price":12,"image":"http://images.baixingliangfan.cn/shopGoodsImg/20171226/20171226162234_480.jpg","count":1}]
+
+
+export const fakeFloordata = [
+  {
+    goodsId: "ae4e71807a91460792670b657fa3ed3a",
+    image: "https://www.annabelkarmel.com/wp-content/uploads/2017/08/Cranberry-and-White-Chocolate-Cookies-3692-132255workHres-1.jpg"
+  },
+  {
+    goodsId: "2a398a5048074fc3b36bc8026bf9dc65",
+    image: "https://qph.fs.quoracdn.net/main-qimg-efc4eada1d8c5804c0f9ad8db5197832-lq"
+  },
+  {
+    goodsId: "b37577ce45ee4cc6ba162959933dbac8",
+    image: "https://dijetaplus.com/wp-content/uploads/2017/01/alergija-na-hranu-simptomi-540x280.jpg"
+  }
+]
+
+export const fakeGoodsdata = {
+    goodsImage:"https://m.media-amazon.com/images/I/81uKjZIuWsL._AC_SL1500_.jpg",
+    goodsName: "Granini sin azúcar añadido zumo 100 % frutas",
+    goodsPrice: 3.9,
+    goodsId: "fb0f913950944b66a97ae262ad14609a"
+  }

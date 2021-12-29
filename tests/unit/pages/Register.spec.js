@@ -2,7 +2,6 @@
 import { mount, createLocalVue} from '@vue/test-utils'
 import Register from '@/components/pages/Register.vue'
 
-
 import VueRouter from 'vue-router';
 const Vant=require("vant")
 
@@ -23,21 +22,21 @@ describe('Register',  () => {
   // mock loginAction()
   const registerAction = jest.spyOn(Register.methods, 'registerAction')
     .mockImplementation(() => {
-      console.log("1. mock registerAction implementation")
+      //console.log("1. mock registerAction implementation")
       checkForm() && register() // call checkForm(set true), then call login
   })
 
   // mock checkForm()
   const checkForm = jest.spyOn(Register.methods, 'checkForm')
     .mockImplementation(() => {
-      console.log("2. mock checkForm implementation")
+      //console.log("2. mock checkForm implementation")
       return true
     })
 
   // mock register()
   const register = jest.spyOn(Register.methods, 'register')
     .mockImplementation(() => {
-      console.log("3. mock register implementation")
+      //console.log("3. mock register implementation")
   })
 
   beforeEach(() => {

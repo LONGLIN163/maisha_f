@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloorCompo should renders FloorCompo 1`] = `
+<div>
+  <div class="floor">
+    <div class="floor-title">Snack</div>
+    <div class="floor-anomaly">
+      <div class="van-row">
+        <div class="floor-one van-col van-col--12"><img alt=""></div>
+        <div class="floor-two van-col van-col--12">
+          <div>
+            <div><img></div>
+            <div><img></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="floor-rule"></div>
+  </div>
+</div>
+`;
