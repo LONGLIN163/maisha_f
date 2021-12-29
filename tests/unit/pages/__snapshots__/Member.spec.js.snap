@@ -11,10 +11,10 @@ exports[`Member renders Member 1`] = `
   </div>
   <div class="top"><img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" class="top-img"></div>
   <div class="login">
-    <div><button class="van-button van-button--warning van-button--normal">
+    <div><button data-test="loginbtn" class="van-button van-button--warning van-button--normal">
         <div class="van-button__content"><span class="van-button__text">Sign in</span></div>
       </button></div>
-    <div><button class="van-button van-button--primary van-button--normal">
+    <div><button data-test="signupbtn" class="van-button van-button--primary van-button--normal">
         <div class="van-button__content"><span class="van-button__text">Singn up</span></div>
       </button></div>
   </div>
