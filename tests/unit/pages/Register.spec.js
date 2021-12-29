@@ -14,30 +14,22 @@ const router = new VueRouter();
 describe('Register',  () => {
 
   let wrapper;
-  // const goBack = jest.spyOn(Register.methods, 'goBack')
-  //   .mockImplementation(() => {
-  //     console.log("1. mock goBack implementation")
-  //   })
 
   // mock loginAction()
   const registerAction = jest.spyOn(Register.methods, 'registerAction')
     .mockImplementation(() => {
-      //console.log("1. mock registerAction implementation")
       checkForm() && register() // call checkForm(set true), then call login
   })
 
   // mock checkForm()
   const checkForm = jest.spyOn(Register.methods, 'checkForm')
     .mockImplementation(() => {
-      //console.log("2. mock checkForm implementation")
       return true
     })
 
   // mock register()
   const register = jest.spyOn(Register.methods, 'register')
-    .mockImplementation(() => {
-      //console.log("3. mock register implementation")
-  })
+    .mockImplementation(() => {})
 
   beforeEach(() => {
     wrapper = mount(Register,{

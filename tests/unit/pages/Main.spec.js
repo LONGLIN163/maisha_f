@@ -16,13 +16,11 @@ describe('Main',  () => {
   let wrapper;
   //mock changeTabBarActive() and hook it to the component
   const changeTabBarActive = jest.spyOn(Main.methods, 'changeTabBarActive')
-    .mockImplementation(() => {
-      //console.log("1. mock changeTabBarActive implementation")
-    })
+    .mockImplementation(() => {})
+  
+  //mock changeTabbar()
   const changeTabbar = jest.spyOn(Main.methods, 'changeTabbar')
-    .mockImplementation(() => {
-      //console.log("2. mock changeTabbar implementation")
-    })
+    .mockImplementation(() => {})
 
   beforeEach(() => {
     wrapper = mount(Main,{

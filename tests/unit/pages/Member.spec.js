@@ -11,14 +11,12 @@ localVue.use(Vant);
 
 describe('Member',  () => {
   let wrapper;
+  
   const goToLogin = jest.spyOn(Member.methods, 'goToLogin')
-    .mockImplementation(() => {
-      //console.log("1. mock goToLogin implementation")
-    })
+    .mockImplementation(() => {})
+
   const goToRegister = jest.spyOn(Member.methods, 'goToRegister')
-    .mockImplementation(() => {
-      //console.log("2. mock goToRegister implementation")
-    })
+    .mockImplementation(() => {})
 
   beforeEach(() => {
     wrapper = mount(Member,{

@@ -19,10 +19,7 @@ describe('Goods', () => {
 
   // mock addGoodsToCart()
   const addGoodsToCart = jest.spyOn(Goods.methods, 'addGoodsToCart')
-  .mockImplementation(() => {
-    //console.log("mock addGoodsToCart implementation")
-    //return true
-  })
+  .mockImplementation(() => {})
 
   beforeEach(() => {
     wrapper = mount(Goods,{
