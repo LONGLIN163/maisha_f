@@ -11,6 +11,7 @@
                             <li 
                                 v-for="(item,index) in category" 
                                 :key="index" 
+                                data-test="category_item"
                                 @click="clickCategory(index,item.ID)" 
                                 :class="{categoryActive:activeCategoryIndex==index}"
                             >
@@ -21,7 +22,7 @@
                 </van-col>
                 <van-col span="18">
                     <div class="tabCategorySub">
-                        <van-tabs v-model="active" @click="onClickCategorySub">
+                        <van-tabs data-test="categorysub_items" v-model="active" @click="onClickCategorySub">
                             <van-tab 
                                v-for="(item, index) in categorySub" 
                                :key="index" 
@@ -42,7 +43,7 @@
                                 :finished="finished"
                                 @load="onLoad"
                             >
-                                <div class="list-item" @click="goGoods(item.ID)" v-for="(item,index) in goodList" :key="index">
+                                <div class="list-item" data-test="goods_item" @click="goGoods(item.ID)" v-for="(item,index) in goodList" :key="index">
                                     <div class="list-item-img"><img :src="item.IMAGE1" width="100%" :onerror="errorImg"/></div>
                                     <div class="list-item-text">
                                         <div>{{item.NAME}}</div>
@@ -81,7 +82,6 @@
                 categorySubId:'', 
                 errorImg:'this.src="' + require('@/assets/images/errorImg.png') + '"',  
                 categoryId:1
-
             }       
         },
         created(){
@@ -106,7 +106,8 @@
                             this.finished = true;  
                     }
                     this.loading=false;
-                    console.log(this.finished)
+                    //console.log(this.finished)
+                    console.log("goods list---",this.goodList)
                 })
                 .catch(error=>{
                     console.log(error)

@@ -39,7 +39,7 @@ exports[`Goods renders Goods 1`] = `
     </div>
   </div>
   <div class="goods-bottom">
-    <div><button class="van-button van-button--primary van-button--large">
+    <div><button data-test="addtocard" class="van-button van-button--primary van-button--large">
         <div class="van-button__content"><span class="van-button__text">ADD TO CART</span></div>
       </button></div>
     <div><button class="van-button van-button--danger van-button--large">
