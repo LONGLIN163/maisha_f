@@ -51,7 +51,6 @@
                 }
             },
             changeTabBarActive(){
-                console.log("changeTabBarActive has been called")
                 this.nowPath=this.$route.path
                 if(this.nowPath=='/cart'){
                     this.active=2;

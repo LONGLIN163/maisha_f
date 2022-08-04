@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <div class="navbar-div">
             <van-nav-bar

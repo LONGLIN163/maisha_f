@@ -98,7 +98,6 @@
                         Toast.success('register success!')
                         this.$router.push('/') // prevent resubmit 1
                     }else{
-                        console.log(res.data.message)
                         this.openLoading=false // stop loading
                         Toast.fail('register failed!')
                     }

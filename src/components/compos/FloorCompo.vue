@@ -38,12 +38,8 @@
             }
         },
         created(){
-            // console.log("floorData---",this.floorData)
-            // console.log("floorTitle---",this.floorTitle)
         },
         mounted(){
-            //console.log("floorData---",this.floorData)
-            //console.log("floorTitle---",this.floorTitle)
         },
         watch:{ 
             //monitor asyn data

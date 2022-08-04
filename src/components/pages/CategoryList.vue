@@ -106,8 +106,6 @@
                             this.finished = true;  
                     }
                     this.loading=false;
-                    //console.log(this.finished)
-                    console.log("goods list---",this.goodList)
                 })
                 .catch(error=>{
                     console.log(error)
@@ -127,12 +125,10 @@
                     method:'get',
                 })
                 .then(res=>{
-                    console.log("res---init---",res)
                     if(res.data.code == 200 && res.data.message ){
                         this.category=res.data.message.sort(function(a, b) { 
                             return - ( b.ID - a.ID );
                         });
-                        console.log(" this.category---------",this.category)
 
                         this.getSubCategoryByCategoryId(this.category[0].ID) // get the first sub cat when we get big category
                     }else{
@@ -144,7 +140,6 @@
                 }) 
             },
             clickCategory(index,categoryId){
-                console.log(index)
                 this.activeCategoryIndex=index
 
                 // init paging info
@@ -162,13 +157,9 @@
                     data:{categoryId:categoryId}
                 })
                 .then(res=>{
-                    console.log("res---sub---",res)
                     if(res.data.code == 200 && res.data.message ){
                         this.categorySub=res.data.message
                         this.active = 0 // active first subcat when switch big category
-
-                        console.log("res---categorySub---",this.categorySub)
-
                         this.categorySubId=this.categorySub[0].ID
                         this.onLoad()
                     }else{

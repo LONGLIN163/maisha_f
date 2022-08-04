@@ -82,7 +82,6 @@
                 let cartInfo = localStorage.cartInfo ? JSON.parse(localStorage.cartInfo) :[]
                 //check if target product is already exist
                 let isHaveGoods=await cartInfo.find(item=>item.goodsId==this.goodsId)
-                //console.log(isHaveGoods)
                 if(!isHaveGoods){ // add this product to the cart
                     let newGoodsInfo={
                         goodsId:this.goodsInfo.ID,

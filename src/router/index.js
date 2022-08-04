@@ -9,14 +9,10 @@ import Cart from '@/components/pages/Cart'
 import Main from '@/components/pages/Main'
 import Member from '@/components/pages/Member'
 
-
-
-
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {path: '/',name: 'Main',component: Main,
     {path: '/',component: Main,
       children:[
         { path: '/',name: 'ShoppingMall',component: ShoppingMall },
